@@ -1,0 +1,94 @@
+{
+  "questions": [
+    {
+      "title": "What happens when calling GC.Collect()?",
+      "answers": [
+        { "answer": "Clears all unused memory cache", "right": false },
+        { "answer": "Forces all background threads to terminate", "right": false },
+        { "answer": "Triggers garbage collection but does not guarantee immediate memory release", "right": true },
+        { "answer": "Deletes all objects marked for finalization", "right": false }
+      ]
+    },
+    {
+      "title": "Which access modifier allows a field to be accessible only within the current class and derived classes?",
+      "answers": [
+        { "answer": "private", "right": false },
+        { "answer": "protected", "right": true },
+        { "answer": "internal", "right": false },
+        { "answer": "public", "right": false }
+      ]
+    },
+    {
+      "title": "What is the difference between ref and out in C#?",
+      "answers": [
+        { "answer": "out requires initialization before use, ref does not", "right": false },
+        { "answer": "ref requires initialization before being passed to a method, while out does not", "right": true },
+        { "answer": "They work the same way", "right": false },
+        { "answer": "ref can only be used with reference types", "right": false }
+      ]
+    },
+    {
+      "title": "Which keyword prevents a class from being inherited?",
+      "answers": [
+        { "answer": "sealed", "right": true },
+        { "answer": "static", "right": false },
+        { "answer": "abstract", "right": false },
+        { "answer": "final", "right": false }
+      ]
+    },
+    {
+      "title": "What does the ?? operator do in C#?",
+      "answers": [
+        { "answer": "Checks if two values are equal", "right": false },
+        { "answer": "Checks if a variable is null and replaces it with another value", "right": true },
+        { "answer": "Acts as a conditional operator similar to ?: ", "right": false },
+        { "answer": "Concatenates strings", "right": false }
+      ]
+    },
+    {
+      "title": "Which keyword prevents a method from being overridden in derived classes?",
+      "answers": [
+        { "answer": "sealed", "right": true },
+        { "answer": "override", "right": false },
+        { "answer": "static", "right": false },
+        { "answer": "abstract", "right": false }
+      ]
+    },
+    {
+      "title": "Which statement about Task and Thread is true?",
+      "answers": [
+        { "answer": "Task always runs on a separate thread", "right": false },
+        { "answer": "Thread creates a new thread, while Task can use the ThreadPool", "right": true },
+        { "answer": "Task cannot be used for asynchronous programming", "right": false },
+        { "answer": "Thread is faster than Task in most cases", "right": false }
+      ]
+    },
+    {
+      "title": "What does yield return do in C#?",
+      "answers": [
+        { "answer": "Returns a value and suspends method execution", "right": true },
+        { "answer": "Immediately terminates the method execution", "right": false },
+        { "answer": "Stops execution of all threads", "right": false },
+        { "answer": "Returns a result in async methods", "right": false }
+      ]
+    },
+    {
+      "title": "What is the difference between IEnumerable<T> and IQueryable<T>?",
+      "answers": [
+        { "answer": "IQueryable<T> executes queries on the client side, while IEnumerable<T> does so on the server side", "right": false },
+        { "answer": "IEnumerable<T> is used only in LINQ to SQL, while IQueryable<T> is not", "right": false },
+        { "answer": "IQueryable<T> supports deferred execution and performs queries on the database, while IEnumerable<T> operates in memory", "right": true },
+        { "answer": "IEnumerable<T> is always faster than IQueryable<T>", "right": false }
+      ]
+    },
+    {
+      "title": "What happens when calling Dispose() on an object implementing IDisposable?",
+      "answers": [
+        { "answer": "The object is forcibly removed from memory", "right": false },
+        { "answer": "The object can no longer be used", "right": true },
+        { "answer": "Dispose() is called automatically when the object goes out of scope", "right": false },
+        { "answer": "Calling Dispose() automatically triggers GC.Collect()", "right": false }
+      ]
+    }
+  ]
+}
