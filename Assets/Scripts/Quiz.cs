@@ -7,34 +7,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
-public enum Rank
-{
-    MegaJunior = 1,
-    Junior = 2,
-    
-    God = 3
-}
-
-[Serializable]
-public class Answer
-{
-    public string answer;
-    public bool right;
-}
-
-[Serializable]
-public struct Question
-{
-    public string title;
-    public Answer[] answers;
-}
-
-[Serializable]
-public class QuizData
-{
-    public Question[] questions;
-}
-
 public class Quiz : MonoBehaviour
 {
     public QuizItem quizItem;

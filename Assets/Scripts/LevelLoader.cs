@@ -1,6 +1,9 @@
 ﻿using System;
+using DefaultNamespace.Json;
+using Newtonsoft.Json;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace DefaultNamespace
@@ -12,8 +15,12 @@ namespace DefaultNamespace
         
         public const string LevelKey = "CurrentLevel";
         public Quiz[] quizItems;
-        public Quiz prefab;
-        private Quiz _currentQuiz;
+        public Quiz quizPrefab;
+        public RectTransform rankViewContent;
+        public RankChapter rankViewPrefab;
+        public SubjectChapter subjectChapter;
+        
+        public Quiz currentQuiz;
         private int currentLevel;
         private void Awake()
         {
@@ -27,21 +34,25 @@ namespace DefaultNamespace
             var currentIndex = index % quizItems.Length;
             Debug.Log(currentIndex);
             
-            var quiz = JsonUtility.FromJson<QuizData>(jsonFile.text);
-            
-            var question = quiz.questions[currentIndex];
+            var quizСontainer = JsonConvert.DeserializeObject<QuizContainer>(jsonFile.text);
+            foreach (var quizData in quizСontainer.quizzes)
+            {
+                Debug.LogError($"SAD {quizData.subjects}");
+                Instantiate(rankViewPrefab, rankViewContent).Setup(this, quizData, subjectChapter);
+            }
+            /*var question = quiz.questions[currentIndex];
             if (!_currentQuiz)
-                _currentQuiz = Instantiate(prefab, canvas);
+                _currentQuiz = Instantiate(quizPrefab, canvas);
             
             _currentQuiz.onCompleted += OnCompleted;
-            _currentQuiz.Setup(question);
+            _currentQuiz.Setup(question);*/
 
         }
         
         private void OnCompleted()
         {
             currentLevel += 1;
-            _currentQuiz.onCompleted -= OnCompleted;
+            currentQuiz.onCompleted -= OnCompleted;
             SaveLevel(currentLevel);
             Load();
         }
