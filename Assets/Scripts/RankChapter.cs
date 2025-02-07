@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,7 +14,8 @@ namespace DefaultNamespace
         private LevelLoader _levelLoader;
         private Button _button;
         private SubjectChapter _subjectChapterPrefab;
-        
+        private List<SubjectChapter> _subjectChapters = new();
+
         private void Awake()
         {
             _button = GetComponent<Button>();
@@ -35,9 +37,13 @@ namespace DefaultNamespace
 
         public void OnClick()
         {
+            _levelLoader.rankChapters.ForEach(rankChapter => rankChapter.gameObject.SetActive(false));
             foreach (var subject in _quizData.subjects)
             {
-                Instantiate(_subjectChapterPrefab, _levelLoader.canvas).Setup(subject.Key);
+                var instance = Instantiate(_subjectChapterPrefab, _levelLoader.rankViewContent);
+                instance.Setup(subject.Key, subject.Value, _subjectChapters);
+
+                _subjectChapters.Add(instance);
             }
         }
     }

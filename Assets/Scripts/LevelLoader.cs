@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DefaultNamespace.Json;
 using Newtonsoft.Json;
 using UnityEditor;
@@ -10,6 +11,8 @@ namespace DefaultNamespace
 {
     public class LevelLoader : MonoBehaviour
     {
+        public static LevelLoader Instance;
+        
         public RectTransform canvas;
         public TextAsset jsonFile;
         
@@ -18,13 +21,16 @@ namespace DefaultNamespace
         public Quiz quizPrefab;
         public RectTransform rankViewContent;
         public RankChapter rankViewPrefab;
-        public SubjectChapter subjectChapter;
+        public SubjectChapter subjectChapterPrefab;
+        public QuestionChapter questionChapterPrefab;
         
         public Quiz currentQuiz;
+        public List<RankChapter> rankChapters = new();
         private int currentLevel;
         private void Awake()
         {
             currentLevel = GetLevel();
+            Instance = this;
             Load();
         }
 
@@ -38,7 +44,10 @@ namespace DefaultNamespace
             foreach (var quizData in quizСontainer.quizzes)
             {
                 Debug.LogError($"SAD {quizData.subjects}");
-                Instantiate(rankViewPrefab, rankViewContent).Setup(this, quizData, subjectChapter);
+                var instance = Instantiate(rankViewPrefab, rankViewContent);
+                    instance.Setup(this, quizData, subjectChapterPrefab);
+                    
+                rankChapters.Add(instance);
             }
             /*var question = quiz.questions[currentIndex];
             if (!_currentQuiz)

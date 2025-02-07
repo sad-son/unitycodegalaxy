@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 712956164}
   - component: {fileID: 712956165}
   m_Layer: 0
-  m_Name: LevelLoader
+  m_Name: ---LEVEL LOADER---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -669,8 +669,10 @@ MonoBehaviour:
   quizPrefab: {fileID: 871082686875252097, guid: b80619e1489a4a04faeb8a50020e7475, type: 3}
   rankViewContent: {fileID: 657433374}
   rankViewPrefab: {fileID: 1833270327197009125, guid: e0c821120b83e7048b4e771405ea3c17, type: 3}
-  subjectChapter: {fileID: 7936737863106701471, guid: 22905944f6e4d5f449bfcadb8993479e, type: 3}
+  subjectChapterPrefab: {fileID: 7936737863106701471, guid: 22905944f6e4d5f449bfcadb8993479e, type: 3}
+  questionChapterPrefab: {fileID: 414343908276225736, guid: 4ceaa3a773671a44485abb2ef6ac747c, type: 3}
   currentQuiz: {fileID: 0}
+  rankChapters: []
 --- !u!1 &991381818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,8 +1092,8 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 712956164}
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1789826381}
   - {fileID: 1094119521}
-  - {fileID: 712956164}

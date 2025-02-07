@@ -27,9 +27,6 @@ public class Quiz : MonoBehaviour
     public void Setup(Question question)
     {
         levelText.text = $"current level: {LevelLoader.GetLevel()}";
-        var rankIndex = (int)LevelLoader.GetLevel() / 1;
-        var rank = rankIndex >= Enum.GetNames(typeof(Rank)).Length ? Rank.God.ToString() : Enum.GetName(typeof(Rank), rankIndex);
-        rankText.text = $"rank: {rank}";
         
         titleText.text = question.title;
         Shuffle(question.answers);

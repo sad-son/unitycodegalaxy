@@ -6,6 +6,7 @@
         "C#": [
           {
             "title": "What happens when calling GC.Collect()?",
+            "short_title": "What happens when calling GC.Collect()?",
             "answers": [
               { "answer": "Clears all unused memory cache", "right": false },
               { "answer": "Forces all background threads to terminate", "right": false },
@@ -17,6 +18,7 @@
         "Rendering": [
           {
             "title": "Which keyword prevents a class from being inherited?",
+            "short_title": "Which keyword prevents a class from being inherited?",
             "answers": [
               { "answer": "sealed", "right": true },
               { "answer": "static", "right": false },
@@ -33,6 +35,7 @@
         "C#": [
           {
             "title": "What is the difference between ref and out in C#?",
+            "short_title": "What is the difference between ref and out in C#?",
             "answers": [
               { "answer": "out requires initialization before use, ref does not", "right": false },
               { "answer": "ref requires initialization before being passed to a method, while out does not", "right": true },
