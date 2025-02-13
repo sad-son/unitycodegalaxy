@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,8 +33,7 @@ namespace DefaultNamespace
         
         public void OnClick()
         {
-            _subjectChapter._questionChapters.ForEach(rankChapter => rankChapter.gameObject.SetActive(false));
-            
+            SetActiveQuestionChapters(false);
             _quiz = Instantiate(LevelLoader.Instance.quizPrefab, LevelLoader.Instance.canvas);
             _quiz.Setup(_currentQuestion);
             _quiz.onCompleted += OnCompleted;
@@ -60,7 +58,13 @@ namespace DefaultNamespace
 
         private void CompleteSubject()
         {
-            throw new System.NotImplementedException();
+            _quiz.gameObject.SetActive(false);
+            SetActiveQuestionChapters(true);
+        }
+
+        private void SetActiveQuestionChapters(bool state)
+        {
+            _subjectChapter._questionChapters.ForEach(questionChapter => questionChapter.gameObject.SetActive(state));
         }
     }
 }

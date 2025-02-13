@@ -666,11 +666,11 @@ MonoBehaviour:
   jsonFile: {fileID: 4900000, guid: 8a4a5464ecce0bc4ab4a95ae5e9fa076, type: 3}
   quizItems:
   - {fileID: 2875606388995218152, guid: 2c8e40e80857989488bf9b0fdf160c75, type: 3}
-  quizPrefab: {fileID: 871082686875252097, guid: b80619e1489a4a04faeb8a50020e7475, type: 3}
+  quizPrefab: {fileID: 6810046594895538225, guid: 7d9fe12ea42c90f43b970b09c112bde7, type: 3}
   rankViewContent: {fileID: 657433374}
-  rankViewPrefab: {fileID: 1833270327197009125, guid: e0c821120b83e7048b4e771405ea3c17, type: 3}
-  subjectChapterPrefab: {fileID: 7936737863106701471, guid: 22905944f6e4d5f449bfcadb8993479e, type: 3}
-  questionChapterPrefab: {fileID: 414343908276225736, guid: 4ceaa3a773671a44485abb2ef6ac747c, type: 3}
+  rankViewPrefab: {fileID: 3602070427275222313, guid: e58d72388f17cf24b871ce6c2ac74aea, type: 3}
+  subjectChapterPrefab: {fileID: 8074088240691114535, guid: ebc2d982ded7ae545b56c98455ac3855, type: 3}
+  questionChapterPrefab: {fileID: 5821664100957088596, guid: 4f2f78922b22667438f04f4c66484100, type: 3}
   currentQuiz: {fileID: 0}
   rankChapters: []
 --- !u!1 &991381818

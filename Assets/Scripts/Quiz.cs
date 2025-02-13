@@ -10,8 +10,6 @@ using Random = UnityEngine.Random;
 public class Quiz : MonoBehaviour
 {
     public QuizItem quizItem;
-    public TMP_Text levelText;
-    public TMP_Text rankText;
     public TMP_Text titleText;
     public RectTransform questionsPanel;
 
@@ -26,8 +24,6 @@ public class Quiz : MonoBehaviour
 
     public void Setup(Question question)
     {
-        levelText.text = $"current level: {LevelLoader.GetLevel()}";
-        
         titleText.text = question.title;
         Shuffle(question.answers);
         var first = !quizItems.Any();
