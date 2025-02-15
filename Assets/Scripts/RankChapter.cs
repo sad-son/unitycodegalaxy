@@ -14,7 +14,6 @@ namespace DefaultNamespace
         private LevelLoader _levelLoader;
         private Button _button;
         private SubjectChapter _subjectChapterPrefab;
-        private List<SubjectChapter> _subjectChapters = new();
 
         private void Awake()
         {
@@ -33,6 +32,8 @@ namespace DefaultNamespace
             _subjectChapterPrefab = subjectChapter;
             _quizData = quizData;
             text.text = quizData.rank;
+            PopupHolder.currentPopupType = PopupType.RankChapter;
+            _levelLoader.subjectChapters.Clear();
         }
 
         public void OnClick()
@@ -41,9 +42,9 @@ namespace DefaultNamespace
             foreach (var subject in _quizData.subjects)
             {
                 var instance = Instantiate(_subjectChapterPrefab, _levelLoader.rankViewContent);
-                instance.Setup(subject.Key, subject.Value, _subjectChapters);
+                instance.Setup(subject.Key, subject.Value, _levelLoader.subjectChapters);
 
-                _subjectChapters.Add(instance);
+                _levelLoader.subjectChapters.Add(instance);
             }
         }
     }

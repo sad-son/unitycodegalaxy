@@ -38,6 +38,7 @@ namespace DefaultNamespace
             answerText.text = answer.answer;
             rightAnswer = answer.right;
             _onComplete = onComplete;
+            image.sprite = defaultImage;
         }
 
         public async void CheckAnswer()

@@ -287,3 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 4413564749867842653}
+  _image: {fileID: 4413564750402548135}
+  _lockedQuestionSprite: {fileID: 21300000, guid: 9d1dacc9565bd4972b5eadd92341e003, type: 3}
+  _completedQuestionSprite: {fileID: 21300000, guid: f74bbba66d0744084adb24b46b885722, type: 3}
+  _currentQuestionSprite: {fileID: 21300000, guid: 00b246f18d3354d5baad68986295716b, type: 3}

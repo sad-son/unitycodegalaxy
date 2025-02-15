@@ -11,7 +11,6 @@ namespace DefaultNamespace
         public Dictionary<string, List<Question>> _subjects;
         public TMP_Text _text;
         private List<SubjectChapter> _subjectChapters = new();
-        public List<QuestionChapter> _questionChapters = new();
         public List<Question> _questions;
 
         private Button _button;
@@ -32,19 +31,31 @@ namespace DefaultNamespace
             _questions = questions;
             _subjectChapters = subjectChapters;
             _text.text = subject;
+            PopupHolder.currentPopupType = PopupType.SubjectChapter;
+            LevelLoader.Instance.questionChapters.Clear();
         }
-        
+
+        private void OnCloseChapter()
+        {
+            CloseButton.instance.onClick -= OnCloseChapter;
+        }
+
         public void OnClick()
         {
-            _subjectChapters.ForEach(rankChapter => rankChapter.gameObject.SetActive(false));
-            
+            SubjectChaptersClose();
+
             foreach (var question in _questions)
             {
                 var instance = Instantiate(LevelLoader.Instance.questionChapterPrefab, LevelLoader.Instance.rankViewContent);
                 instance.Setup(question, this);
 
-                _questionChapters.Add(instance);
+                LevelLoader.Instance.questionChapters.Add(instance);
             }
+        }
+
+        private void SubjectChaptersClose()
+        {
+            _subjectChapters.ForEach(subjectChapter => subjectChapter.gameObject.SetActive(false));
         }
     }
 }

@@ -26,13 +26,13 @@ public class Quiz : MonoBehaviour
     {
         titleText.text = question.title;
         Shuffle(question.answers);
-        var first = !quizItems.Any();
+        var quizCreated = !quizItems.Any();
         
         for (var i = 0; i < question.answers.Length; i++)
         {
             var answer = question.answers[i];
             
-            if (first)
+            if (quizCreated)
             {
                 var instance = Instantiate(quizItem, questionsPanel);
                 quizItems.Add(instance);
@@ -42,6 +42,8 @@ public class Quiz : MonoBehaviour
            
             quizItems[i].Setup(answer, Complete);
         }
+        
+        PopupHolder.currentPopupType = PopupType.Quiz;
     }
 
     

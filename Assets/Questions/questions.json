@@ -8,10 +8,66 @@
             "title": "What happens when calling GC.Collect()?",
             "short_title": "What happens when calling GC.Collect()?",
             "answers": [
-              { "answer": "Clears all unused memory cache", "right": false },
-              { "answer": "Forces all background threads to terminate", "right": false },
-              { "answer": "Triggers garbage collection but does not guarantee immediate memory release", "right": true },
-              { "answer": "Deletes all objects marked for finalization", "right": false }
+              {
+                "answer": "Clears all unused memory cache",
+                "right": false
+              },
+              {
+                "answer": "Forces all background threads to terminate",
+                "right": false
+              },
+              {
+                "answer": "Triggers garbage collection but does not guarantee immediate memory release",
+                "right": true
+              },
+              {
+                "answer": "Deletes all objects marked for finalization",
+                "right": false
+              }
+            ]
+          },
+          {
+            "title": "What is the purpose of the 'using' statement in C#?",
+            "short_title": "Purpose of 'using' statement",
+            "answers": [
+              {
+                "answer": "To include namespaces",
+                "right": false
+              },
+              {
+                "answer": "To ensure resources are disposed of correctly",
+                "right": true
+              },
+              {
+                "answer": "To define a constant",
+                "right": false
+              },
+              {
+                "answer": "To create a new object",
+                "right": false
+              }
+            ]
+          },
+          {
+            "title": "What is the default access modifier for class members in C#?",
+            "short_title": "Default access modifier",
+            "answers": [
+              {
+                "answer": "public",
+                "right": false
+              },
+              {
+                "answer": "private",
+                "right": true
+              },
+              {
+                "answer": "protected",
+                "right": false
+              },
+              {
+                "answer": "internal",
+                "right": false
+              }
             ]
           }
         ],
@@ -20,10 +76,46 @@
             "title": "Which keyword prevents a class from being inherited?",
             "short_title": "Which keyword prevents a class from being inherited?",
             "answers": [
-              { "answer": "sealed", "right": true },
-              { "answer": "static", "right": false },
-              { "answer": "abstract", "right": false },
-              { "answer": "final", "right": false }
+              {
+                "answer": "sealed",
+                "right": true
+              },
+              {
+                "answer": "static",
+                "right": false
+              },
+              {
+                "answer": "abstract",
+                "right": false
+              },
+              {
+                "answer": "final",
+                "right": false
+              }
+            ]
+          }
+        ],
+        "Unity": [
+          {
+            "title": "What is the main purpose of the Unity Editor?",
+            "short_title": "Purpose of Unity Editor",
+            "answers": [
+              {
+                "answer": "To write C# scripts",
+                "right": false
+              },
+              {
+                "answer": "To design and configure game scenes",
+                "right": true
+              },
+              {
+                "answer": "To compile game code",
+                "right": false
+              },
+              {
+                "answer": "To manage version control",
+                "right": false
+              }
             ]
           }
         ]
@@ -37,10 +129,205 @@
             "title": "What is the difference between ref and out in C#?",
             "short_title": "What is the difference between ref and out in C#?",
             "answers": [
-              { "answer": "out requires initialization before use, ref does not", "right": false },
-              { "answer": "ref requires initialization before being passed to a method, while out does not", "right": true },
-              { "answer": "They work the same way", "right": false },
-              { "answer": "ref can only be used with reference types", "right": false }
+              {
+                "answer": "out requires initialization before use, ref does not",
+                "right": false
+              },
+              {
+                "answer": "ref requires initialization before being passed to a method, while out does not",
+                "right": true
+              },
+              {
+                "answer": "They work the same way",
+                "right": false
+              },
+              {
+                "answer": "ref can only be used with reference types",
+                "right": false
+              }
+            ]
+          },
+          {
+            "title": "What is the difference between a struct and a class in C#?",
+            "short_title": "Struct vs Class",
+            "answers": [
+              {
+                "answer": "Structs are reference types, classes are value types",
+                "right": false
+              },
+              {
+                "answer": "Structs are value types, classes are reference types",
+                "right": true
+              },
+              {
+                "answer": "Structs cannot have methods",
+                "right": false
+              },
+              {
+                "answer": "Classes cannot implement interfaces",
+                "right": false
+              }
+            ]
+          },
+          {
+            "title": "What is the purpose of the 'async' and 'await' keywords in C#?",
+            "short_title": "Purpose of 'async' and 'await'",
+            "answers": [
+              { "answer": "To enable asynchronous programming", "right": true },
+              { "answer": "To define a new thread", "right": false },
+              { "answer": "To handle exceptions", "right": false },
+              { "answer": "To create a new task scheduler", "right": false }
+            ]
+          },
+          {
+            "title": "What is the difference between 'IEnumerable' and 'IQueryable' in C#?",
+            "short_title": "IEnumerable vs IQueryable",
+            "answers": [
+              { "answer": "'IQueryable' is used for querying databases, 'IEnumerable' for in-memory collections", "right": true },
+              { "answer": "'IEnumerable' is faster than 'IQueryable'", "right": false },
+              { "answer": "'IQueryable' is used for multithreading", "right": false },
+              { "answer": "There is no difference", "right": false }
+            ]
+          }
+        ],
+        "Unity": [
+          {
+            "title": "What is the purpose of the Unity Physics engine?",
+            "short_title": "Purpose of Unity Physics",
+            "answers": [
+              {
+                "answer": "To handle rendering of graphics",
+                "right": false
+              },
+              {
+                "answer": "To simulate physical interactions between objects",
+                "right": true
+              },
+              {
+                "answer": "To manage audio playback",
+                "right": false
+              },
+              {
+                "answer": "To handle user input",
+                "right": false
+              }
+            ]
+          },
+          {
+            "title": "What is the purpose of the 'NavMesh' in Unity?",
+            "short_title": "Purpose of NavMesh",
+            "answers": [
+              { "answer": "To define walkable areas for AI agents", "right": true },
+              { "answer": "To handle physics collisions", "right": false },
+              { "answer": "To manage lighting in the scene", "right": false },
+              { "answer": "To create particle effects", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of the 'OnTriggerEnter' method in Unity?",
+            "short_title": "Purpose of 'OnTriggerEnter'",
+            "answers": [
+              { "answer": "To detect when a GameObject enters a trigger collider", "right": true },
+              { "answer": "To handle physics collisions", "right": false },
+              { "answer": "To update the game state every frame", "right": false },
+              { "answer": "To initialize variables", "right": false }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "rank": "senior",
+      "subjects": {
+        "C#": [
+          {
+            "title": "What is the purpose of the 'volatile' keyword in C#?",
+            "short_title": "Purpose of 'volatile' keyword",
+            "answers": [
+              {
+                "answer": "To indicate that a field can be modified by multiple threads",
+                "right": true
+              },
+              {
+                "answer": "To define a constant value",
+                "right": false
+              },
+              {
+                "answer": "To optimize memory usage",
+                "right": false
+              },
+              {
+                "answer": "To handle exceptions",
+                "right": false
+              }
+            ]
+          },
+          {
+            "title": "What is the difference between 'Task' and 'ValueTask' in C#?",
+            "short_title": "Task vs ValueTask",
+            "answers": [
+              {
+                "answer": "'ValueTask' is used for performance optimization in scenarios where the result is often synchronous",
+                "right": true
+              },
+              {
+                "answer": "'Task' is faster than 'ValueTask'",
+                "right": false
+              },
+              {
+                "answer": "'ValueTask' is used for multithreading",
+                "right": false
+              },
+              {
+                "answer": "There is no difference",
+                "right": false
+              }
+            ]
+          }
+        ],
+        "Unity": [
+          {
+            "title": "What is the purpose of the 'ScriptableObject' in Unity?",
+            "short_title": "Purpose of ScriptableObject",
+            "answers": [
+              {
+                "answer": "To store data independently of GameObjects",
+                "right": true
+              },
+              {
+                "answer": "To handle physics collisions",
+                "right": false
+              },
+              {
+                "answer": "To manage lighting in the scene",
+                "right": false
+              },
+              {
+                "answer": "To create particle effects",
+                "right": false
+              }
+            ]
+          },
+          {
+            "title": "What is the purpose of the 'OnGUI' method in Unity?",
+            "short_title": "Purpose of 'OnGUI'",
+            "answers": [
+              {
+                "answer": "To render and handle GUI elements",
+                "right": true
+              },
+              {
+                "answer": "To update the game state every frame",
+                "right": false
+              },
+              {
+                "answer": "To handle physics collisions",
+                "right": false
+              },
+              {
+                "answer": "To initialize variables",
+                "right": false
+              }
             ]
           }
         ]

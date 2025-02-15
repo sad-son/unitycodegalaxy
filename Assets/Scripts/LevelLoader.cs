@@ -26,6 +26,8 @@ namespace DefaultNamespace
         
         public Quiz currentQuiz;
         public List<RankChapter> rankChapters = new();
+        public List<SubjectChapter> subjectChapters = new();
+        [FormerlySerializedAs("_questionChapters")] public List<QuestionChapter> questionChapters = new();
         private int currentLevel;
         private void Awake()
         {
@@ -43,7 +45,6 @@ namespace DefaultNamespace
             var quizСontainer = JsonConvert.DeserializeObject<QuizContainer>(jsonFile.text);
             foreach (var quizData in quizСontainer.quizzes)
             {
-                Debug.LogError($"SAD {quizData.subjects}");
                 var instance = Instantiate(rankViewPrefab, rankViewContent);
                     instance.Setup(this, quizData, subjectChapterPrefab);
                     
