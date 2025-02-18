@@ -18,7 +18,7 @@ namespace DefaultNamespace
         private void Awake()
         {
             _button = GetComponent<Button>();
-            _button.onClick.AddListener(OnClick);
+            _button.onClick.AddListener(SetupSubjects);
         }
 
         private void OnDestroy()
@@ -33,19 +33,19 @@ namespace DefaultNamespace
             _quizData = quizData;
             text.text = quizData.rank;
             PopupHolder.currentPopupType = PopupType.RankChapter;
-            _levelLoader.subjectChapters.Clear();
+            SetupSubjects();
         }
 
-        public void OnClick()
+        public void SetupSubjects()
         {
-            _levelLoader.rankChapters.ForEach(rankChapter => rankChapter.gameObject.SetActive(false));
             foreach (var subject in _quizData.subjects)
             {
                 var instance = Instantiate(_subjectChapterPrefab, _levelLoader.rankViewContent);
-                instance.Setup(subject.Key, subject.Value, _levelLoader.subjectChapters);
+                instance.Setup(subject.Key, subject.Value, _quizData.rank);
 
                 _levelLoader.subjectChapters.Add(instance);
             }
+            _levelLoader.rankChapters.ForEach(rankChapter => rankChapter.gameObject.SetActive(false));
         }
     }
 }

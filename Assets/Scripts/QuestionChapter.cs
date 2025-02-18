@@ -62,7 +62,6 @@ namespace DefaultNamespace
                 var question = _subjectChapter._questions[i];
                 if (question.Equals(_currentQuestion))
                 {
-                    Debug.LogError($"SAD {i} {_currentQuestion.short_title} {_subjectChapter._questions.Count}");
                     if (i + 1 >= _subjectChapter._questions.Count)
                     {
                         CompleteChapter();
@@ -87,6 +86,7 @@ namespace DefaultNamespace
             _quiz.gameObject.SetActive(false);
             SetActiveQuestionChapters(true);
             PopupHolder.currentPopupType = PopupType.QuestionChapter;
+            CloseButton.instance.gameObject.SetActive(true);
         }
 
         private void SetActiveQuestionChapters(bool state)

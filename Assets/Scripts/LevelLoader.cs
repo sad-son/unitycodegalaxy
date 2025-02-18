@@ -46,9 +46,9 @@ namespace DefaultNamespace
             foreach (var quizData in quizСontainer.quizzes)
             {
                 var instance = Instantiate(rankViewPrefab, rankViewContent);
-                    instance.Setup(this, quizData, subjectChapterPrefab);
-                    
                 rankChapters.Add(instance);
+                
+                instance.Setup(this, quizData, subjectChapterPrefab);
             }
             /*var question = quiz.questions[currentIndex];
             if (!_currentQuiz)

@@ -24,6 +24,7 @@ public class Quiz : MonoBehaviour
 
     public void Setup(Question question)
     {
+        CloseButton.instance.gameObject.SetActive(false);
         titleText.text = question.title;
         Shuffle(question.answers);
         var quizCreated = !quizItems.Any();
