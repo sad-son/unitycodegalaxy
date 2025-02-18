@@ -290,6 +290,10 @@ MonoBehaviour:
   _title: {fileID: 4413564749867842653}
   _rankText: {fileID: 8776439963197881237}
   _questions: []
+  _image: {fileID: 4413564750402548135}
+  _availableSprite: {fileID: 21300000, guid: 00b246f18d3354d5baad68986295716b, type: 3}
+  _lockedSprite: {fileID: 21300000, guid: 9d1dacc9565bd4972b5eadd92341e003, type: 3}
+  _completedSprite: {fileID: 21300000, guid: f74bbba66d0744084adb24b46b885722, type: 3}
 --- !u!1 &5610308947534332530
 GameObject:
   m_ObjectHideFlags: 0

@@ -33,8 +33,7 @@ namespace DefaultNamespace
         private void OnClick()
         {
             onClick?.Invoke();
-            
-            Debug.LogError($"SAD {PopupHolder.currentPopupType}");
+  
             if (PopupHolder.currentPopupType == PopupType.QuestionChapter)
             {
                 PopupHolder.currentPopupType = PopupType.SubjectChapter;

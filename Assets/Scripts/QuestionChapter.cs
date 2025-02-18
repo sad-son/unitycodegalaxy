@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,8 @@ namespace DefaultNamespace
         private SubjectChapter _subjectChapter;
         private Button _button;
         private Quiz _quiz;
+
+        public event Action onCompleted;
         
         private void Awake()
         {
@@ -26,10 +29,12 @@ namespace DefaultNamespace
         private void OnDestroy()
         {
             _button.onClick.RemoveAllListeners();
+            onCompleted = null;
         }
         
-        public void Setup(Question question, SubjectChapter subjectChapter)
+        public void Setup(Question question, SubjectChapter subjectChapter, Action completed)
         {
+            onCompleted += completed;
             _subjectChapter = subjectChapter;
             _currentQuestion = question;
             _text.text = _currentQuestion.short_title;
@@ -38,9 +43,9 @@ namespace DefaultNamespace
             PopupHolder.currentPopupType = PopupType.QuestionChapter;
         }
 
-        private void UpdateVisual()
+        public void UpdateVisual()
         {
-            if (SaveSystem.IsQuestionCompleted(_currentQuestion.title))
+            if (LocalDataSystem.IsQuestionCompleted(_currentQuestion.title))
             {
                 _image.sprite = _completedQuestionSprite;
             }
@@ -56,7 +61,8 @@ namespace DefaultNamespace
         
         private void OnCompleted()
         {
-            SaveSystem.SaveQuestion(_currentQuestion.title);
+            LocalDataSystem.SaveQuestion(_currentQuestion.title);
+            onCompleted?.Invoke();
             for (int i = 0; i < _subjectChapter._questions.Count; i++)
             {
                 var question = _subjectChapter._questions[i];
@@ -72,6 +78,8 @@ namespace DefaultNamespace
                     break;
                 }
             }
+            
+         
         }
 
         private void NextQuestion(int i)
@@ -85,6 +93,7 @@ namespace DefaultNamespace
             UpdateVisual();
             _quiz.gameObject.SetActive(false);
             SetActiveQuestionChapters(true);
+            LevelLoader.Instance.questionChapters.ForEach(questionChapter => questionChapter.UpdateVisual());
             PopupHolder.currentPopupType = PopupType.QuestionChapter;
             CloseButton.instance.gameObject.SetActive(true);
         }
