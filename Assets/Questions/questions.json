@@ -3,119 +3,1059 @@
     {
       "rank": "junior",
       "subjects": {
-        "C#": [
+        "Unity Basics": [
           {
-            "title": "What happens when calling GC.Collect()?",
-            "short_title": "What happens when calling GC.Collect()?",
+            "title": "What is the main panel used to manage objects in a scene?",
+            "short_title": "Main panel for managing objects",
             "answers": [
-              {
-                "answer": "Clears all unused memory cache",
-                "right": false
-              },
-              {
-                "answer": "Forces all background threads to terminate",
-                "right": false
-              },
-              {
-                "answer": "Triggers garbage collection but does not guarantee immediate memory release",
-                "right": true
-              },
-              {
-                "answer": "Deletes all objects marked for finalization",
-                "right": false
-              }
+              { "answer": "Console", "right": false },
+              { "answer": "Inspector", "right": false },
+              { "answer": "Hierarchy", "right": true },
+              { "answer": "Project", "right": false }
             ]
           },
           {
-            "title": "What is the purpose of the 'using' statement in C#?",
-            "short_title": "Purpose of 'using' statement",
+            "title": "What component is responsible for rendering a 3D object in Unity?",
+            "short_title": "Component for rendering 3D objects",
             "answers": [
-              {
-                "answer": "To include namespaces",
-                "right": false
-              },
-              {
-                "answer": "To ensure resources are disposed of correctly",
-                "right": true
-              },
-              {
-                "answer": "To define a constant",
-                "right": false
-              },
-              {
-                "answer": "To create a new object",
-                "right": false
-              }
+              { "answer": "Rigidbody", "right": false },
+              { "answer": "Collider", "right": false },
+              { "answer": "Mesh Renderer", "right": true },
+              { "answer": "Transform", "right": false }
+            ]
+          },
+          {
+            "title": "What is the main panel used to manage objects in a scene?",
+            "short_title": "Main panel for managing objects",
+            "answers": [
+              { "answer": "Console", "right": false },
+              { "answer": "Inspector", "right": false },
+              { "answer": "Hierarchy", "right": true },
+              { "answer": "Project", "right": false }
+            ]
+          },
+          {
+            "title": "Which component is required to make a GameObject respond to physics?",
+            "short_title": "Physics component",
+            "answers": [
+              { "answer": "Transform", "right": false },
+              { "answer": "Rigidbody", "right": true },
+              { "answer": "Collider", "right": false },
+              { "answer": "Mesh Renderer", "right": false }
+            ]
+          },
+          {
+            "title": "Which Unity panel shows assets like textures, models, and scripts?",
+            "short_title": "Panel for assets",
+            "answers": [
+              { "answer": "Hierarchy", "right": false },
+              { "answer": "Scene", "right": false },
+              { "answer": "Project", "right": true },
+              { "answer": "Inspector", "right": false }
+            ]
+          },
+          {
+            "title": "What file format does Unity use for storing scenes?",
+            "short_title": "Scene file format",
+            "answers": [
+              { "answer": ".unityscene", "right": false },
+              { "answer": ".scene", "right": false },
+              { "answer": ".unity", "right": true },
+              { "answer": ".level", "right": false }
+            ]
+          },
+          {
+            "title": "What does the 'Update()' function do in Unity?",
+            "short_title": "Purpose of Update()",
+            "answers": [
+              { "answer": "Runs once at the start of the game", "right": false },
+              { "answer": "Runs every frame", "right": true },
+              { "answer": "Runs when a collision occurs", "right": false },
+              { "answer": "Runs when the game object is destroyed", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of the 'Transform' component?",
+            "short_title": "Transform component",
+            "answers": [
+              { "answer": "To handle physics interactions", "right": false },
+              { "answer": "To define the position, rotation, and scale of a GameObject", "right": true },
+              { "answer": "To render 3D objects", "right": false },
+              { "answer": "To manage animations", "right": false }
+            ]
+          },
+          {
+            "title": "Which panel is used to view and edit the properties of a selected GameObject?",
+            "short_title": "Panel for editing properties",
+            "answers": [
+              { "answer": "Hierarchy", "right": false },
+              { "answer": "Project", "right": false },
+              { "answer": "Inspector", "right": true },
+              { "answer": "Console", "right": false }
+            ]
+          }
+        ],
+        "C#": [
+          {
+            "title": "What keyword is used to declare a variable in C#?",
+            "short_title": "Keyword for variable declaration",
+            "answers": [
+              { "answer": "var", "right": true },
+              { "answer": "let", "right": false },
+              { "answer": "dim", "right": false },
+              { "answer": "declare", "right": false }
             ]
           },
           {
             "title": "What is the default access modifier for class members in C#?",
             "short_title": "Default access modifier",
             "answers": [
-              {
-                "answer": "public",
-                "right": false
-              },
-              {
-                "answer": "private",
-                "right": true
-              },
-              {
-                "answer": "protected",
-                "right": false
-              },
-              {
-                "answer": "internal",
-                "right": false
-              }
+              { "answer": "public", "right": false },
+              { "answer": "private", "right": true },
+              { "answer": "protected", "right": false },
+              { "answer": "internal", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of the 'using' statement in C#?",
+            "short_title": "Purpose of 'using' statement",
+            "answers": [
+              { "answer": "To declare a namespace", "right": false },
+              { "answer": "To manage resources and ensure disposal", "right": true },
+              { "answer": "To import external libraries", "right": false },
+              { "answer": "To define a function scope", "right": false }
+            ]
+          },
+          {
+            "title": "Which keyword is used to prevent a method from being overridden?",
+            "short_title": "Keyword to prevent method override",
+            "answers": [
+              { "answer": "static", "right": false },
+              { "answer": "sealed", "right": false },
+              { "answer": "final", "right": false },
+              { "answer": "virtual", "right": false }
             ]
           }
         ],
-        "Rendering": [
+        "GameObjects and Components": [
           {
-            "title": "Which keyword prevents a class from being inherited?",
-            "short_title": "Which keyword prevents a class from being inherited?",
+            "title": "What Unity component controls an object's position, rotation, and scale?",
+            "short_title": "Component for position, rotation, and scale",
             "answers": [
-              {
-                "answer": "sealed",
-                "right": true
-              },
-              {
-                "answer": "static",
-                "right": false
-              },
-              {
-                "answer": "abstract",
-                "right": false
-              },
-              {
-                "answer": "final",
-                "right": false
-              }
+              { "answer": "Rigidbody", "right": false },
+              { "answer": "Transform", "right": true },
+              { "answer": "Mesh Renderer", "right": false },
+              { "answer": "Collider", "right": false }
+            ]
+          },
+          {
+            "title": "How do you destroy a GameObject in Unity?",
+            "short_title": "Destroying GameObjects",
+            "answers": [
+              { "answer": "GameObject.Remove();", "right": false },
+              { "answer": "Destroy(gameObject);", "right": true },
+              { "answer": "Object.Delete(gameObject);", "right": false },
+              { "answer": "gameObject.Destroy();", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of a Collider in Unity?",
+            "short_title": "Purpose of Collider",
+            "answers": [
+              { "answer": "To make an object move", "right": false },
+              { "answer": "To detect and react to physics interactions", "right": true },
+              { "answer": "To apply materials", "right": false },
+              { "answer": "To display textures", "right": false }
+            ]
+          },
+          {
+            "title": "How do you destroy a GameObject in Unity?",
+            "short_title": "Destroying GameObjects",
+            "answers": [
+              { "answer": "GameObject.Remove();", "right": false },
+              { "answer": "Destroy(gameObject);", "right": true },
+              { "answer": "Object.Delete(gameObject);", "right": false },
+              { "answer": "gameObject.Destroy();", "right": false }
             ]
           }
         ],
-        "Unity": [
+        "Physics in Unity": [
           {
-            "title": "What is the main purpose of the Unity Editor?",
-            "short_title": "Purpose of Unity Editor",
+            "title": "What does 'isTrigger' do in a Collider?",
+            "short_title": "Function of isTrigger",
+            "answers": [
+              { "answer": "Makes the object invisible", "right": false },
+              { "answer": "Allows objects to pass through without physical collision", "right": true },
+              { "answer": "Changes the object's material", "right": false },
+              { "answer": "Stops the object from moving", "right": false }
+            ]
+          },
+          {
+            "title": "What method is used to apply force to a Rigidbody?",
+            "short_title": "Applying force to Rigidbody",
+            "answers": [
+              { "answer": "AddVelocity()", "right": false },
+              { "answer": "ApplyForce()", "right": false },
+              { "answer": "Rigidbody.Move()", "right": false },
+              { "answer": "AddForce()", "right": true }
+            ]
+          },
+          {
+            "title": "What function detects collisions in Unity?",
+            "short_title": "Collision detection in Unity",
+            "answers": [
+              { "answer": "OnTriggerEnter()", "right": false },
+              { "answer": "OnCollisionEnter()", "right": false },
+              { "answer": "Both A and B", "right": true },
+              { "answer": "Update()", "right": false }
+            ]
+          },
+          {
+            "title": "What is the difference between FixedUpdate() and Update()?",
+            "short_title": "FixedUpdate vs Update",
+            "answers": [
+              { "answer": "Update() is used for physics calculations", "right": false },
+              { "answer": "FixedUpdate() runs at a fixed time step", "right": true },
+              { "answer": "Update() runs before Start()", "right": false },
+              { "answer": "FixedUpdate() is only called once per game session", "right": false }
+            ]
+          },
+          {
+            "title": "Which component is required for an object to be affected by physics?",
+            "short_title": "Physics component requirement",
+            "answers": [
+              { "answer": "Mesh Renderer", "right": false },
+              { "answer": "Collider", "right": false },
+              { "answer": "Rigidbody", "right": true },
+              { "answer": "Transform", "right": false }
+            ]
+          },
+          {
+            "title": "What is the function of Time.deltaTime?",
+            "short_title": "Function of Time.deltaTime",
+            "answers": [
+              { "answer": "Gives the time elapsed since the last frame", "right": true },
+              { "answer": "Returns the time since the game started", "right": false },
+              { "answer": "Pauses the game for a given duration", "right": false },
+              { "answer": "Forces a physics update", "right": false }
+            ]
+          }
+        ],
+        "UI and Interaction": [
+          {
+            "title": "What Unity component is used to display text on the screen?",
+            "short_title": "Displaying text in Unity",
+            "answers": [
+              { "answer": "UI.Label", "right": false },
+              { "answer": "TextMesh", "right": false },
+              { "answer": "TMPro.Text", "right": false },
+              { "answer": "Both B and C", "right": true }
+            ]
+          },
+          {
+            "title": "What function is used to detect mouse clicks in Unity?",
+            "short_title": "Detecting mouse clicks",
+            "answers": [
+              { "answer": "MouseClick()", "right": false },
+              { "answer": "Input.GetMouseButtonDown()", "right": true },
+              { "answer": "CheckClick()", "right": false },
+              { "answer": "MouseEvent()", "right": false }
+            ]
+          },
+          {
+            "title": "What component is used to play sound in Unity?",
+            "short_title": "Playing sound in Unity",
+            "answers": [
+              { "answer": "AudioPlayer", "right": false },
+              { "answer": "SoundComponent", "right": false },
+              { "answer": "AudioSource", "right": true },
+              { "answer": "MusicPlayer", "right": false }
+            ]
+          },
+          {
+            "title": "How do you make a button clickable in Unity?",
+            "short_title": "Making a button clickable",
+            "answers": [
+              { "answer": "Assign an 'OnClick' event in the Inspector", "right": true },
+              { "answer": "Attach a script to handle input", "right": false },
+              { "answer": "Use Unity’s built-in UI system", "right": false },
+              { "answer": "All of the above", "right": false }
+            ]
+          },
+          {
+            "title": "Which component is used to display text in Unity's UI?",
+            "short_title": "UI Text component",
+            "answers": [
+              { "answer": "TextMeshPro", "right": true },
+              { "answer": "Label", "right": false },
+              { "answer": "UIText", "right": false },
+              { "answer": "TextRenderer", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of the 'Canvas' component in Unity?",
+            "short_title": "Canvas purpose",
+            "answers": [
+              { "answer": "To render 3D objects", "right": false },
+              { "answer": "To manage UI elements", "right": true },
+              { "answer": "To handle physics interactions", "right": false },
+              { "answer": "To create animations", "right": false }
+            ]
+          },
+          {
+            "title": "Which component allows a UI element to respond to user clicks?",
+            "short_title": "UI interactivity",
+            "answers": [
+              { "answer": "Button", "right": true },
+              { "answer": "Image", "right": false },
+              { "answer": "Text", "right": false },
+              { "answer": "Slider", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of the 'RectTransform' component in Unity UI?",
+            "short_title": "RectTransform purpose",
+            "answers": [
+              { "answer": "To handle physics interactions", "right": false },
+              { "answer": "To define the position, rotation, and scale of UI elements", "right": true },
+              { "answer": "To render 3D objects", "right": false },
+              { "answer": "To manage animations", "right": false }
+            ]
+          },
+          {
+            "title": "Which UI component is used to create a scrollable area?",
+            "short_title": "Scrollable UI",
+            "answers": [
+              { "answer": "ScrollView", "right": true },
+              { "answer": "Panel", "right": false },
+              { "answer": "Grid", "right": false },
+              { "answer": "List", "right": false }
+            ]
+          },
+          {
+            "title": "Which Unity UI component is used to display text?",
+            "short_title": "UI component for text display",
+            "answers": [
+              { "answer": "Image", "right": false },
+              { "answer": "RawImage", "right": false },
+              { "answer": "TextMeshPro", "right": true },
+              { "answer": "EventSystem", "right": false }
+            ]
+          },
+          {
+            "title": "What is needed for a UI button to register a click?",
+            "short_title": "UI button click requirements",
+            "answers": [
+              { "answer": "A Collider component", "right": false },
+              { "answer": "An Event Trigger component", "right": false },
+              { "answer": "An EventSystem in the scene", "right": true },
+              { "answer": "A custom script", "right": false }
+            ]
+          }
+        ],
+        "Basic Input and Player Controls": [
+          {
+            "title": "What is the default Unity function for handling keyboard input?",
+            "short_title": "Handling keyboard input",
+            "answers": [
+              { "answer": "Input.GetKey()", "right": true },
+              { "answer": "Keyboard.CheckKey()", "right": false },
+              { "answer": "GetInput()", "right": false },
+              { "answer": "InputManager.GetKey()", "right": false }
+            ]
+          },
+          {
+            "title": "How do you detect when the player presses the spacebar?",
+            "short_title": "Detecting spacebar press",
+            "answers": [
+              { "answer": "Input.GetButtonDown('space')", "right": false },
+              { "answer": "Input.GetKeyDown(KeyCode.Space)", "right": true },
+              { "answer": "Keyboard.Press(KeyCode.Space)", "right": false },
+              { "answer": "GetKeyDown(Spacebar)", "right": false }
+            ]
+          },
+          {
+            "title": "Which method is used to detect keyboard input in Unity?",
+            "short_title": "Keyboard input detection",
+            "answers": [
+              { "answer": "Input.GetKey()", "right": true },
+              { "answer": "Input.GetMouseButton()", "right": false },
+              { "answer": "Input.GetTouch()", "right": false },
+              { "answer": "Input.GetAxis()", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'Input.GetAxis(\"Horizontal\")' return?",
+            "short_title": "Input.GetAxis usage",
+            "answers": [
+              { "answer": "A boolean value", "right": false },
+              { "answer": "A value between -1 and 1 representing horizontal input", "right": true },
+              { "answer": "The position of the mouse", "right": false },
+              { "answer": "The current frame count", "right": false }
+            ]
+          },
+          {
+            "title": "Which method is used to detect mouse clicks in Unity?",
+            "short_title": "Mouse click detection",
+            "answers": [
+              { "answer": "Input.GetKey()", "right": false },
+              { "answer": "Input.GetMouseButton()", "right": true },
+              { "answer": "Input.GetTouch()", "right": false },
+              { "answer": "Input.GetAxis()", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of the 'Input Manager' in Unity?",
+            "short_title": "Input Manager purpose",
+            "answers": [
+              { "answer": "To manage game objects", "right": false },
+              { "answer": "To define and configure input axes and buttons", "right": true },
+              { "answer": "To handle physics interactions", "right": false },
+              { "answer": "To create animations", "right": false }
+            ]
+          },
+          {
+            "title": "Which method is used to detect touch input on mobile devices?",
+            "short_title": "Touch input detection",
+            "answers": [
+              { "answer": "Input.GetKey()", "right": false },
+              { "answer": "Input.GetMouseButton()", "right": false },
+              { "answer": "Input.GetTouch()", "right": true },
+              { "answer": "Input.GetAxis()", "right": false }
+            ]
+          }
+        ],
+        "Scripting and Logic": [
+          {
+            "title": "Which method is called automatically when a script starts?",
+            "short_title": "Script start method",
+            "answers": [
+              { "answer": "Awake()", "right": false },
+              { "answer": "Start()", "right": true },
+              { "answer": "Initialize()", "right": false },
+              { "answer": "Begin()", "right": false }
+            ]
+          },
+          {
+            "title": "How do you access a component attached to the same GameObject in a script?",
+            "short_title": "Accessing components in script",
+            "answers": [
+              { "answer": "GetComponent<ComponentName>()", "right": true },
+              { "answer": "FindObject<ComponentName>()", "right": false },
+              { "answer": "gameObject.Find<ComponentName>()", "right": false },
+              { "answer": "new ComponentName()", "right": false }
+            ]
+          },
+          {
+            "title": "Which keyword is used to define a variable that can be accessed in the Unity Inspector?",
+            "short_title": "Exposing variables in Inspector",
+            "answers": [
+              { "answer": "private", "right": false },
+              { "answer": "protected", "right": false },
+              { "answer": "public", "right": true },
+              { "answer": "static", "right": false }
+            ]
+          },
+          {
+            "title": "What is the correct syntax to instantiate a GameObject in Unity?",
+            "short_title": "Instantiating GameObjects",
+            "answers": [
+              { "answer": "Instantiate(gameObject);", "right": false },
+              { "answer": "GameObject.Instantiate(prefab);", "right": true },
+              { "answer": "CreateObject(prefab);", "right": false },
+              { "answer": "Spawn(gameObject);", "right": false }
+            ]
+          },
+          {
+            "title": "Which method is used to detect collisions in Unity?",
+            "short_title": "Collision detection",
+            "answers": [
+              { "answer": "OnTriggerEnter()", "right": false },
+              { "answer": "OnCollisionEnter()", "right": true },
+              { "answer": "OnCollisionStay()", "right": false },
+              { "answer": "OnTriggerStay()", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of the 'Start()' function in Unity?",
+            "short_title": "Purpose of Start()",
+            "answers": [
+              { "answer": "Runs every frame", "right": false },
+              { "answer": "Runs once when the game starts", "right": true },
+              { "answer": "Runs when a collision occurs", "right": false },
+              { "answer": "Runs when the game object is destroyed", "right": false }
+            ]
+          },
+          {
+            "title": "Which namespace is required to use Unity's UI system in scripts?",
+            "short_title": "UI namespace",
+            "answers": [
+              { "answer": "UnityEngine.UI", "right": true },
+              { "answer": "UnityEngine.Graphics", "right": false },
+              { "answer": "UnityEngine.Input", "right": false },
+              { "answer": "UnityEngine.Core", "right": false }
+            ]
+          }
+        ],
+        "Prefabs and Instantiation": [
+          {
+            "title": "What is a Prefab in Unity?",
+            "short_title": "Prefab definition",
+            "answers": [
+              { "answer": "A reusable template for GameObjects", "right": true },
+              { "answer": "A type of light", "right": false },
+              { "answer": "A script for animations", "right": false },
+              { "answer": "A UI element", "right": false }
+            ]
+          },
+          {
+            "title": "How do you instantiate a Prefab in Unity?",
+            "short_title": "Instantiating Prefabs",
+            "answers": [
+              { "answer": "Instantiate(prefab);", "right": true },
+              { "answer": "Create(prefab);", "right": false },
+              { "answer": "Spawn(prefab);", "right": false },
+              { "answer": "Clone(prefab);", "right": false }
+            ]
+          },
+          {
+            "title": "What happens when you modify a Prefab in Unity?",
+            "short_title": "Modifying Prefabs",
+            "answers": [
+              { "answer": "Only the selected instance is modified", "right": false },
+              { "answer": "All instances of the Prefab are updated", "right": true },
+              { "answer": "The Prefab is deleted", "right": false },
+              { "answer": "Nothing happens", "right": false }
+            ]
+          }
+        ],
+        "Audio Basics": [
+          {
+            "title": "Which component is used to play sounds in Unity?",
+            "short_title": "Audio component",
+            "answers": [
+              { "answer": "Audio Source", "right": true },
+              { "answer": "Audio Listener", "right": false },
+              { "answer": "Audio Clip", "right": false },
+              { "answer": "Audio Mixer", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of the 'Audio Listener' component?",
+            "short_title": "Audio Listener purpose",
+            "answers": [
+              { "answer": "To play sounds", "right": false },
+              { "answer": "To receive and play audio in the scene", "right": true },
+              { "answer": "To mix audio tracks", "right": false },
+              { "answer": "To create sound effects", "right": false }
+            ]
+          },
+          {
+            "title": "Which tool is used to control audio effects and mixing in Unity?",
+            "short_title": "Audio mixing tool",
+            "answers": [
+              { "answer": "Audio Mixer", "right": true },
+              { "answer": "Audio Source", "right": false },
+              { "answer": "Audio Clip", "right": false },
+              { "answer": "Audio Listener", "right": false }
+            ]
+          }
+        ],
+        "Lighting and Rendering": [
+          {
+            "title": "Which type of light in Unity is most performance-friendly for large scenes?",
+            "short_title": "Performance-friendly light",
+            "answers": [
+              { "answer": "Directional Light", "right": true },
+              { "answer": "Point Light", "right": false },
+              { "answer": "Spot Light", "right": false },
+              { "answer": "Area Light", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'Baked Lighting' in Unity?",
+            "short_title": "Baked Lighting purpose",
+            "answers": [
+              { "answer": "To calculate lighting in real-time", "right": false },
+              { "answer": "To precompute lighting for better performance", "right": true },
+              { "answer": "To create dynamic shadows", "right": false },
+              { "answer": "To handle post-processing effects", "right": false }
+            ]
+          },
+          {
+            "title": "Which component is used to add reflections to a scene in Unity?",
+            "short_title": "Reflections in Unity",
+            "answers": [
+              { "answer": "Reflection Probe", "right": true },
+              { "answer": "Light Probe", "right": false },
+              { "answer": "Camera", "right": false },
+              { "answer": "Skybox", "right": false }
+            ]
+          }
+        ],
+        "Animation Basics": [
+          {
+            "title": "Which component is used to create animations in Unity?",
+            "short_title": "Animation component",
+            "answers": [
+              { "answer": "Animator", "right": true },
+              { "answer": "Animation", "right": false },
+              { "answer": "Rigidbody", "right": false },
+              { "answer": "Transform", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of the 'Animator Controller' in Unity?",
+            "short_title": "Animator Controller purpose",
+            "answers": [
+              { "answer": "To manage physics interactions", "right": false },
+              { "answer": "To control the flow of animations", "right": true },
+              { "answer": "To render 3D models", "right": false },
+              { "answer": "To handle UI elements", "right": false }
+            ]
+          },
+          {
+            "title": "Which window is used to create and edit animation clips in Unity?",
+            "short_title": "Animation clip editing",
+            "answers": [
+              { "answer": "Animation Window", "right": true },
+              { "answer": "Inspector", "right": false },
+              { "answer": "Hierarchy", "right": false },
+              { "answer": "Project", "right": false }
+            ]
+          }
+        ],
+        "OOP Principles": [
+          {
+            "title": "Which of the following best describes encapsulation?",
+            "short_title": "Definition of encapsulation",
+            "answers": [
+              { "answer": "Hiding the internal details and exposing only necessary parts", "right": true },
+              { "answer": "Allowing unrestricted access to all members", "right": false },
+              { "answer": "Restricting object creation", "right": false },
+              { "answer": "Linking multiple objects together", "right": false }
+            ]
+          },
+          {
+            "title": "What is polymorphism in object-oriented programming?",
+            "short_title": "Definition of polymorphism",
+            "answers": [
+              { "answer": "The ability to process objects differently based on their data type", "right": true },
+              { "answer": "Defining multiple methods with different names", "right": false },
+              { "answer": "Forcing a class to inherit from multiple base classes", "right": false },
+              { "answer": "Restricting method overriding", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of abstraction in OOP?",
+            "short_title": "Purpose of abstraction",
+            "answers": [
+              { "answer": "To hide complex implementation details and expose only relevant functionality", "right": true },
+              { "answer": "To make all members of a class public", "right": false },
+              { "answer": "To allow multiple classes to inherit from one base class", "right": false },
+              { "answer": "To enforce strict access control", "right": false }
+            ]
+          },
+          {
+            "title": "Which of the following is NOT an OOP principle?",
+            "short_title": "Non-OOP principle",
+            "answers": [
+              { "answer": "Encapsulation", "right": false },
+              { "answer": "Abstraction", "right": false },
+              { "answer": "Recursion", "right": true },
+              { "answer": "Polymorphism", "right": false }
+            ]
+          },
+          {
+            "title": "What is encapsulation in OOP?",
+            "short_title": "Definition of encapsulation",
+            "answers": [
+              { "answer": "Hiding implementation details and exposing only necessary parts", "right": true },
+              { "answer": "Using multiple classes to achieve a goal", "right": false },
+              { "answer": "The ability to define multiple methods with the same name", "right": false },
+              { "answer": "Restricting access to certain variables only within a method", "right": false }
+            ]
+          },
+          {
+            "title": "What is polymorphism in OOP?",
+            "short_title": "Definition of polymorphism",
+            "answers": [
+              { "answer": "The ability to take many forms", "right": true },
+              { "answer": "Restricting data access", "right": false },
+              { "answer": "Hiding implementation details", "right": false },
+              { "answer": "Using interfaces only", "right": false }
+            ]
+          },
+          {
+            "title": "Which keyword is used in C# to achieve inheritance?",
+            "short_title": "Inheritance keyword",
+            "answers": [
+              { "answer": "extends", "right": false },
+              { "answer": "inherits", "right": false },
+              { "answer": "base", "right": false },
+              { "answer": ":", "right": true }
+            ]
+          },
+          {
+            "title": "Which access modifier allows a class member to be accessible within the same assembly but not from another assembly?",
+            "short_title": "Internal access modifier",
+            "answers": [
+              { "answer": "private", "right": false },
+              { "answer": "protected", "right": false },
+              { "answer": "internal", "right": true },
+              { "answer": "public", "right": false }
+            ]
+          },
+          {
+            "title": "What is the main benefit of using interfaces in OOP?",
+            "short_title": "Benefit of interfaces",
+            "answers": [
+              { "answer": "They allow multiple inheritance in C#", "right": true },
+              { "answer": "They prevent code duplication", "right": false },
+              { "answer": "They improve performance", "right": false },
+              { "answer": "They restrict object instantiation", "right": false }
+            ]
+          },
+          {
+            "title": "What does the 'virtual' keyword do in C#?",
+            "short_title": "Purpose of virtual keyword",
+            "answers": [
+              { "answer": "Allows a method to be overridden in a derived class", "right": true },
+              { "answer": "Prevents a method from being overridden", "right": false },
+              { "answer": "Declares a method as abstract", "right": false },
+              { "answer": "Hides the method from subclasses", "right": false }
+            ]
+          },
+          {
+            "title": "What is an abstract class?",
+            "short_title": "Definition of abstract class",
+            "answers": [
+              { "answer": "A class that cannot be instantiated and may contain abstract methods", "right": true },
+              { "answer": "A class that has no methods or properties", "right": false },
+              { "answer": "A class that must implement all methods from an interface", "right": false },
+              { "answer": "A class that is always sealed", "right": false }
+            ]
+          },
+          {
+            "title": "Which OOP principle is focused on hiding implementation details?",
+            "short_title": "Hiding implementation details",
+            "answers": [
+              { "answer": "Encapsulation", "right": true },
+              { "answer": "Inheritance", "right": false },
+              { "answer": "Polymorphism", "right": false },
+              { "answer": "Abstraction", "right": false }
+            ]
+          },
+          {
+            "title": "What is the difference between an interface and an abstract class?",
+            "short_title": "Interface vs Abstract Class",
+            "answers": [
+              { "answer": "An interface cannot have implemented methods, but an abstract class can", "right": true },
+              { "answer": "An interface can be instantiated, but an abstract class cannot", "right": false },
+              { "answer": "An interface always has constructors, while an abstract class does not", "right": false },
+              { "answer": "Abstract classes cannot be inherited", "right": false }
+            ]
+          }
+        ],
+        "Inheritance and Interfaces": [
+          {
+            "title": "What is the key difference between an abstract class and an interface?",
+            "short_title": "Abstract class vs Interface",
+            "answers": [
+              { "answer": "An abstract class can have implementations, while an interface cannot", "right": true },
+              { "answer": "An interface can have constructors", "right": false },
+              { "answer": "An abstract class cannot contain fields", "right": false },
+              { "answer": "Interfaces cannot be implemented by multiple classes", "right": false }
+            ]
+          },
+          {
+            "title": "Which keyword is used to inherit from a base class in C#?",
+            "short_title": "Keyword for inheritance",
+            "answers": [
+              { "answer": "extends", "right": false },
+              { "answer": "inherits", "right": false },
+              { "answer": "base", "right": false },
+              { "answer": ":", "right": true }
+            ]
+          },
+          {
+            "title": "Can a C# class implement multiple interfaces?",
+            "short_title": "Multiple interfaces",
+            "answers": [
+              { "answer": "Yes", "right": true },
+              { "answer": "No", "right": false },
+              { "answer": "Only if they share the same methods", "right": false },
+              { "answer": "Only if they are inherited from an abstract class", "right": false }
+            ]
+          }
+        ],
+        "Exception Handling": [
+          {
+            "title": "Which block is required when handling exceptions in C#?",
+            "short_title": "Required block for exception handling",
+            "answers": [
+              { "answer": "finally", "right": false },
+              { "answer": "throw", "right": false },
+              { "answer": "catch", "right": true },
+              { "answer": "error", "right": false }
+            ]
+          },
+          {
+            "title": "What does the 'finally' block do in a try-catch statement?",
+            "short_title": "Purpose of finally block",
+            "answers": [
+              { "answer": "Executes code only if an exception occurs", "right": false },
+              { "answer": "Executes code whether an exception occurs or not", "right": true },
+              { "answer": "Skips the catch block", "right": false },
+              { "answer": "Terminates the program if an exception is unhandled", "right": false }
+            ]
+          }
+        ],
+        "Delegates and Events": [
+          {
+            "title": "What is a delegate in C#?",
+            "short_title": "Definition of delegate",
+            "answers": [
+              { "answer": "A reference type for methods", "right": true },
+              { "answer": "A way to create multiple instances of a class", "right": false },
+              { "answer": "A feature for asynchronous programming", "right": false },
+              { "answer": "A built-in event handler", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of events in C#?",
+            "short_title": "Purpose of events",
+            "answers": [
+              { "answer": "To define class properties", "right": false },
+              { "answer": "To encapsulate method calls into a delegate", "right": false },
+              { "answer": "To enable notification between objects", "right": true },
+              { "answer": "To store multiple values in one object", "right": false }
+            ]
+          },
+          {
+            "title": "Which keyword is used to declare an event in C#?",
+            "short_title": "Keyword for event declaration",
+            "answers": [
+              { "answer": "delegate", "right": false },
+              { "answer": "event", "right": true },
+              { "answer": "handler", "right": false },
+              { "answer": "trigger", "right": false }
+            ]
+          },
+          {
+            "title": "Which of the following best describes multicast delegates?",
+            "short_title": "Multicast Delegates",
+            "answers": [
+              { "answer": "Delegates that can reference multiple methods", "right": true },
+              { "answer": "Delegates used only for events", "right": false },
+              { "answer": "Delegates that execute asynchronously", "right": false },
+              { "answer": "Delegates that are automatically garbage collected", "right": false }
+            ]
+          },
+          {
+            "title": "What happens when you invoke an event with no subscribers?",
+            "short_title": "Invoking an event with no subscribers",
+            "answers": [
+              { "answer": "Nothing happens", "right": true },
+              { "answer": "A NullReferenceException is thrown", "right": false },
+              { "answer": "A warning is generated at compile-time", "right": false },
+              { "answer": "The program terminates", "right": false }
+            ]
+          },
+          {
+            "title": "Which method signature matches the EventHandler delegate in C#?",
+            "short_title": "EventHandler delegate signature",
+            "answers": [
+              { "answer": "void MethodName(object sender, EventArgs e)", "right": true },
+              { "answer": "void MethodName()", "right": false },
+              { "answer": "bool MethodName(int value)", "right": false },
+              { "answer": "Task MethodName()", "right": false }
+            ]
+          },
+          {
+            "title": "How can you subscribe a method to an event?",
+            "short_title": "Subscribing to an event",
+            "answers": [
+              { "answer": "Using += operator", "right": true },
+              { "answer": "Using = operator", "right": false },
+              { "answer": "Using -> operator", "right": false },
+              { "answer": "Using event keyword directly", "right": false }
+            ]
+          },
+          {
+            "title": "Which delegate type is commonly used for event handlers?",
+            "short_title": "Common delegate type for events",
+            "answers": [
+              { "answer": "EventHandler", "right": true },
+              { "answer": "Func<>", "right": false },
+              { "answer": "Action<>", "right": false },
+              { "answer": "Predicate<>", "right": false }
+            ]
+          },
+          {
+            "title": "What is an anonymous method in C#?",
+            "short_title": "Anonymous method definition",
+            "answers": [
+              { "answer": "A method without a name, assigned to a delegate", "right": true },
+              { "answer": "A method that does not return anything", "right": false },
+              { "answer": "A method declared inside another method", "right": false },
+              { "answer": "A method with no parameters", "right": false }
+            ]
+          },
+          {
+            "title": "Which lambda expression syntax is correct for a delegate accepting two integers and returning their sum?",
+            "short_title": "Lambda syntax for sum delegate",
+            "answers": [
+              { "answer": "(x, y) => x + y", "right": true },
+              { "answer": "x, y => x + y", "right": false },
+              { "answer": "delegate(int x, int y) { return x + y; }", "right": false },
+              { "answer": "Func<int, int, int> sum = (x, y) => { return x + y; };", "right": false }
+            ]
+          },
+          {
+            "title": "How do you remove a method from an event subscription?",
+            "short_title": "Unsubscribing from an event",
+            "answers": [
+              { "answer": "Using -= operator", "right": true },
+              { "answer": "Using += operator", "right": false },
+              { "answer": "Using event.Unsubscribe()", "right": false },
+              { "answer": "Using event.Remove()", "right": false }
+            ]
+          }
+        ],
+        "SOLID Principles": [
+          {
+            "title": "What does the 'S' in SOLID stand for?",
+            "short_title": "S in SOLID",
+            "answers": [
+              { "answer": "Single Responsibility Principle", "right": true },
+              { "answer": "Static Class Principle", "right": false },
+              { "answer": "Simple Inheritance Principle", "right": false },
+              { "answer": "State Management Principle", "right": false }
+            ]
+          },
+          {
+            "title": "Which principle promotes dependency on abstractions rather than concrete implementations?",
+            "short_title": "Dependency Inversion Principle",
+            "answers": [
+              { "answer": "Liskov Substitution Principle", "right": false },
+              { "answer": "Dependency Inversion Principle", "right": true },
+              { "answer": "Interface Segregation Principle", "right": false },
+              { "answer": "Open/Closed Principle", "right": false }
+            ]
+          },
+          {
+            "title": "What does the 'L' in SOLID stand for?",
+            "short_title": "L in SOLID",
+            "answers": [
+              { "answer": "Liskov Substitution Principle", "right": true },
+              { "answer": "Layered Architecture Principle", "right": false },
+              { "answer": "Logical Dependency Principle", "right": false },
+              { "answer": "Lightweight Object Principle", "right": false }
+            ]
+          },
+          {
+            "title": "Which principle ensures that a class should have only one reason to change?",
+            "short_title": "Single Responsibility Principle",
+            "answers": [
+              { "answer": "Single Responsibility Principle", "right": true },
+              { "answer": "Open/Closed Principle", "right": false },
+              { "answer": "Liskov Substitution Principle", "right": false },
+              { "answer": "Interface Segregation Principle", "right": false }
+            ]
+          },
+          {
+            "title": "Which SOLID principle is violated when a subclass changes the behavior of its superclass in an unexpected way?",
+            "short_title": "Liskov Substitution Principle Violation",
+            "answers": [
+              { "answer": "Liskov Substitution Principle", "right": true },
+              { "answer": "Open/Closed Principle", "right": false },
+              { "answer": "Interface Segregation Principle", "right": false },
+              { "answer": "Dependency Inversion Principle", "right": false }
+            ]
+          },
+          {
+            "title": "Which principle suggests that software entities should be open for extension but closed for modification?",
+            "short_title": "Open/Closed Principle",
+            "answers": [
+              { "answer": "Open/Closed Principle", "right": true },
+              { "answer": "Single Responsibility Principle", "right": false },
+              { "answer": "Dependency Inversion Principle", "right": false },
+              { "answer": "Liskov Substitution Principle", "right": false }
+            ]
+          }
+        ],
+        "Memory Management": [
+          {
+            "title": "What is the purpose of the 'using' statement in C#?",
+            "short_title": "Purpose of 'using' statement",
+            "answers": [
+              { "answer": "To manage scope and ensure disposal of resources", "right": true },
+              { "answer": "To include namespaces in the code", "right": false },
+              { "answer": "To import external libraries", "right": false },
+              { "answer": "To enable garbage collection", "right": false }
+            ]
+          },
+          {
+            "title": "Which memory area is used for storing reference-type variables?",
+            "short_title": "Reference types storage",
+            "answers": [
+              { "answer": "Stack", "right": false },
+              { "answer": "Heap", "right": true },
+              { "answer": "Registers", "right": false },
+              { "answer": "Static memory", "right": false }
+            ]
+          },
+          {
+            "title": "What is garbage collection in C#?",
+            "short_title": "Garbage collection",
             "answers": [
               {
-                "answer": "To write C# scripts",
-                "right": false
-              },
-              {
-                "answer": "To design and configure game scenes",
+                "answer": "A process that automatically reclaims unused memory",
                 "right": true
               },
               {
-                "answer": "To compile game code",
+                "answer": "A method to manually free memory",
                 "right": false
               },
               {
-                "answer": "To manage version control",
+                "answer": "A way to handle runtime exceptions",
+                "right": false
+              },
+              {
+                "answer": "A tool for optimizing database queries",
                 "right": false
               }
+            ]
+          },
+          {
+            "title": "Which method can be used to force garbage collection in C#?",
+            "short_title": "Forcing garbage collection",
+            "answers": [
+              { "answer": "GC.Collect()", "right": true },
+              { "answer": "GC.Run()", "right": false },
+              { "answer": "GC.Execute()", "right": false },
+              { "answer": "GC.Dispose()", "right": false }
+            ]
+          },
+          {
+            "title": "What happens when an object implementing IDisposable is not disposed properly?",
+            "short_title": "Undisposed IDisposable Object",
+            "answers": [
+              { "answer": "It may cause memory leaks", "right": true },
+              { "answer": "It will be automatically collected without issues", "right": false },
+              { "answer": "It will be forcefully finalized by GC", "right": false },
+              { "answer": "It will throw an exception", "right": false }
+            ]
+          },
+          {
+            "title": "Which of the following is the best practice to manage memory efficiently in C#?",
+            "short_title": "Best Memory Management Practice",
+            "answers": [
+              { "answer": "Use 'using' statement for IDisposable objects", "right": true },
+              { "answer": "Call GC.Collect() manually frequently", "right": false },
+              { "answer": "Avoid using reference types", "right": false },
+              { "answer": "Use large object heap for all objects", "right": false }
             ]
           }
         ]
@@ -187,6 +1127,26 @@
               { "answer": "'IEnumerable' is faster than 'IQueryable'", "right": false },
               { "answer": "'IQueryable' is used for multithreading", "right": false },
               { "answer": "There is no difference", "right": false }
+            ]
+          },
+          {
+            "title": "Which collection type in C# is dynamically sized?",
+            "short_title": "Dynamically sized collection",
+            "answers": [
+              { "answer": "Array", "right": false },
+              { "answer": "List", "right": true },
+              { "answer": "Dictionary", "right": false },
+              { "answer": "Queue", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'static' mean in C#?",
+            "short_title": "Meaning of 'static' in C#",
+            "answers": [
+              { "answer": "The member belongs to an instance", "right": false },
+              { "answer": "The member belongs to the class, not instances", "right": true },
+              { "answer": "The member cannot be modified", "right": false },
+              { "answer": "The member is always public", "right": false }
             ]
           }
         ],
