@@ -52,6 +52,7 @@ namespace DefaultNamespace
                 return;
             }
             
+            HealthSystem.Decrease();
             image.sprite = redImage;
             await UniTask.Delay(TimeSpan.FromSeconds(answerCheckedDelay), cancellationToken: this.GetCancellationTokenOnDestroy());
             image.sprite = defaultImage;

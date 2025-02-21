@@ -78,8 +78,6 @@ namespace DefaultNamespace
                     break;
                 }
             }
-            
-         
         }
 
         private void NextQuestion(int i)

@@ -7,5 +7,7 @@ namespace DefaultNamespace.User
     {
         public string name;
         public string rank = Rank.Junior.ToString();
+        public int health = 5;
+        public int maxHealth = 5;
     }
 }

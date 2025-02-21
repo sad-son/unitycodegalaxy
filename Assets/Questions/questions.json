@@ -15173,6 +15173,819 @@
           }
         ]
       }
+    },
+    {
+      "rank": "Senior",
+      "subjects": {
+        "Advanced Shader Programming and Optimization": [
+          {
+            "title": "What is the primary purpose of a Compute Shader in Unity?",
+            "short_title": "Compute Shader purpose",
+            "answers": [
+              { "answer": "Performs general-purpose GPU computations", "right": true },
+              { "answer": "Renders vertex data", "right": false },
+              { "answer": "Handles physics", "right": false },
+              { "answer": "Manages UI", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'SV_DispatchThreadID' represent in an HLSL Compute Shader?",
+            "short_title": "SV_DispatchThreadID",
+            "answers": [
+              { "answer": "The unique ID of a thread in the dispatch", "right": true },
+              { "answer": "The vertex position", "right": false },
+              { "answer": "The rendering thread", "right": false },
+              { "answer": "The physics thread", "right": false }
+            ]
+          },
+          {
+            "title": "What is the benefit of using 'Shader Feature' directives in Unity?",
+            "short_title": "Shader Feature",
+            "answers": [
+              { "answer": "Reduces shader variants for build optimization", "right": true },
+              { "answer": "Improves physics", "right": false },
+              { "answer": "Renders faster", "right": false },
+              { "answer": "Stops shaders", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'Tessellation' achieve in a Unity shader?",
+            "short_title": "Tessellation",
+            "answers": [
+              { "answer": "Subdivides geometry for smoother surfaces", "right": true },
+              { "answer": "Renders flat geometry", "right": false },
+              { "answer": "Handles physics", "right": false },
+              { "answer": "Manages animations", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'Shader.PropertyToID()' in Unity?",
+            "short_title": "PropertyToID",
+            "answers": [
+              { "answer": "Converts property names to integer IDs for efficiency", "right": true },
+              { "answer": "Stops property access", "right": false },
+              { "answer": "Renders properties", "right": false },
+              { "answer": "Handles input", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'RWStructuredBuffer' enable in a Compute Shader?",
+            "short_title": "RWStructuredBuffer",
+            "answers": [
+              { "answer": "Read-write access to structured data", "right": true },
+              { "answer": "Read-only vertex data", "right": false },
+              { "answer": "Rendering buffers", "right": false },
+              { "answer": "Physics buffers", "right": false }
+            ]
+          },
+          {
+            "title": "What is the advantage of 'Shader Warmup' in Unity?",
+            "short_title": "Shader Warmup",
+            "answers": [
+              { "answer": "Precompiles shaders to avoid runtime hitches", "right": true },
+              { "answer": "Improves physics", "right": false },
+              { "answer": "Renders faster", "right": false },
+              { "answer": "Stops shaders", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'SV_POSITION' output in an HLSL vertex shader?",
+            "short_title": "SV_POSITION",
+            "answers": [
+              { "answer": "The vertex position in clip space", "right": true },
+              { "answer": "The vertex color", "right": false },
+              { "answer": "The vertex normal", "right": false },
+              { "answer": "The vertex UV", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'Shader Graph SubShader Tags'?",
+            "short_title": "SubShader Tags",
+            "answers": [
+              { "answer": "Defines rendering behavior like queue or type", "right": true },
+              { "answer": "Renders sub-shaders", "right": false },
+              { "answer": "Stops rendering", "right": false },
+              { "answer": "Handles physics", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'cbuffer' declare in an HLSL shader?",
+            "short_title": "cbuffer",
+            "answers": [
+              { "answer": "A constant buffer for uniform data", "right": true },
+              { "answer": "A render buffer", "right": false },
+              { "answer": "A physics buffer", "right": false },
+              { "answer": "An animation buffer", "right": false }
+            ]
+          },
+          {
+            "title": "What is the benefit of 'Branch Flattening' in shader optimization?",
+            "short_title": "Branch Flattening",
+            "answers": [
+              { "answer": "Reduces GPU branching overhead", "right": true },
+              { "answer": "Improves physics", "right": false },
+              { "answer": "Renders branches", "right": false },
+              { "answer": "Stops optimization", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'Shader.EnableKeyword()' do in Unity?",
+            "short_title": "EnableKeyword",
+            "answers": [
+              { "answer": "Activates a shader variant dynamically", "right": true },
+              { "answer": "Disables keywords", "right": false },
+              { "answer": "Renders keywords", "right": false },
+              { "answer": "Handles animations", "right": false }
+            ]
+          },
+          {
+            "title": "What is the role of 'Geometry Shader' in Unity?",
+            "short_title": "Geometry Shader",
+            "answers": [
+              { "answer": "Modifies or generates geometry between vertex and fragment stages", "right": true },
+              { "answer": "Renders vertex data", "right": false },
+              { "answer": "Handles physics", "right": false },
+              { "answer": "Stops geometry", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'UNITY_MATRIX_MVP' represent in an HLSL shader?",
+            "short_title": "UNITY_MATRIX_MVP",
+            "answers": [
+              { "answer": "The combined model-view-projection matrix", "right": true },
+              { "answer": "The model matrix only", "right": false },
+              { "answer": "The physics matrix", "right": false },
+              { "answer": "The rendering matrix", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'Shader Stripping' in Unity?",
+            "short_title": "Shader Stripping",
+            "answers": [
+              { "answer": "Removes unused shader variants for build size", "right": true },
+              { "answer": "Stops shaders", "right": false },
+              { "answer": "Renders stripped shaders", "right": false },
+              { "answer": "Handles physics", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'StructuredBuffer' provide in an HLSL shader?",
+            "short_title": "StructuredBuffer",
+            "answers": [
+              { "answer": "Read-only structured data access", "right": true },
+              { "answer": "Write-only data", "right": false },
+              { "answer": "Rendering buffers", "right": false },
+              { "answer": "Physics buffers", "right": false }
+            ]
+          },
+          {
+            "title": "What is the advantage of 'Shader LOD' in Unity?",
+            "short_title": "Shader LOD",
+            "answers": [
+              { "answer": "Controls shader complexity based on hardware", "right": true },
+              { "answer": "Improves rendering", "right": false },
+              { "answer": "Stops shaders", "right": false },
+              { "answer": "Handles animations", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'SV_Target' specify in an HLSL fragment shader?",
+            "short_title": "SV_Target",
+            "answers": [
+              { "answer": "The output color to the render target", "right": true },
+              { "answer": "The vertex position", "right": false },
+              { "answer": "The physics target", "right": false },
+              { "answer": "The animation target", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'Shader Pass' in Unity?",
+            "short_title": "Shader Pass",
+            "answers": [
+              { "answer": "Defines a single rendering operation", "right": true },
+              { "answer": "Stops rendering passes", "right": false },
+              { "answer": "Renders physics", "right": false },
+              { "answer": "Handles input", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'ShaderUtil.ShaderToSM()' estimate in Unity?",
+            "short_title": "ShaderToSM",
+            "answers": [
+              { "answer": "The Shader Model level of a shader", "right": true },
+              { "answer": "Rendering speed", "right": false },
+              { "answer": "Physics model", "right": false },
+              { "answer": "Animation level", "right": false }
+            ]
+          }
+        ],
+        "Physics Engine Customization and Performance": [
+          {
+            "title": "What is the primary physics engine used by Unity for 3D simulations?",
+            "short_title": "Physics engine",
+            "answers": [
+              { "answer": "PhysX", "right": true },
+              { "answer": "Havok", "right": false },
+              { "answer": "Bullet", "right": false },
+              { "answer": "Box2D", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'Physics.autoSyncTransforms' control in Unity?",
+            "short_title": "autoSyncTransforms",
+            "answers": [
+              { "answer": "Whether physics syncs transforms automatically", "right": true },
+              { "answer": "Rendering sync", "right": false },
+              { "answer": "Animation sync", "right": false },
+              { "answer": "UI sync", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'PhysX.PxScene' integration in Unity?",
+            "short_title": "PxScene",
+            "answers": [
+              { "answer": "Allows direct access to PhysX scenes for customization", "right": true },
+              { "answer": "Renders physics scenes", "right": false },
+              { "answer": "Stops physics", "right": false },
+              { "answer": "Handles animations", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'Physics.defaultMaxAngularSpeed' optimize?",
+            "short_title": "defaultMaxAngularSpeed",
+            "answers": [
+              { "answer": "Limits global angular velocity for stability", "right": true },
+              { "answer": "Improves rendering", "right": false },
+              { "answer": "Stops physics", "right": false },
+              { "answer": "Manages UI", "right": false }
+            ]
+          },
+          {
+            "title": "What is the benefit of 'Rigidbody.solverVelocityIterations'?",
+            "short_title": "solverVelocityIterations",
+            "answers": [
+              { "answer": "Improves velocity constraint accuracy", "right": true },
+              { "answer": "Renders velocity", "right": false },
+              { "answer": "Stops solver", "right": false },
+              { "answer": "Handles animations", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'PhysicsScene.Simulate()' allow in Unity?",
+            "short_title": "PhysicsScene.Simulate",
+            "answers": [
+              { "answer": "Runs a custom physics simulation in isolation", "right": true },
+              { "answer": "Renders physics scenes", "right": false },
+              { "answer": "Stops physics", "right": false },
+              { "answer": "Manages input", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'Physics.bounceThreshold'?",
+            "short_title": "bounceThreshold",
+            "answers": [
+              { "answer": "Sets minimum speed for collision bounces", "right": true },
+              { "answer": "Controls rendering bounces", "right": false },
+              { "answer": "Stops bounces", "right": false },
+              { "answer": "Handles animations", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'Rigidbody2D.simulated' control in Unity?",
+            "short_title": "Rigidbody2D.simulated",
+            "answers": [
+              { "answer": "Enables or disables 2D physics simulation", "right": true },
+              { "answer": "Renders 2D physics", "right": false },
+              { "answer": "Stops 2D rendering", "right": false },
+              { "answer": "Manages UI", "right": false }
+            ]
+          },
+          {
+            "title": "What is the advantage of 'PhysicsScene.Raycast()' over global raycasts?",
+            "short_title": "PhysicsScene.Raycast",
+            "answers": [
+              { "answer": "Targets a specific physics scene", "right": true },
+              { "answer": "Improves rendering", "right": false },
+              { "answer": "Stops raycasts", "right": false },
+              { "answer": "Handles animations", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'Physics.defaultSolverIterations' affect?",
+            "short_title": "defaultSolverIterations",
+            "answers": [
+              { "answer": "Global constraint solving accuracy", "right": true },
+              { "answer": "Rendering iterations", "right": false },
+              { "answer": "Physics stops", "right": false },
+              { "answer": "Animation accuracy", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'PhysX.PxConstraint' in custom physics?",
+            "short_title": "PxConstraint",
+            "answers": [
+              { "answer": "Defines custom joint constraints", "right": true },
+              { "answer": "Renders constraints", "right": false },
+              { "answer": "Stops constraints", "right": false },
+              { "answer": "Handles UI", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'Physics.IgnoreLayerCollision()' optimize?",
+            "short_title": "IgnoreLayerCollision",
+            "answers": [
+              { "answer": "Reduces collision checks between layers", "right": true },
+              { "answer": "Improves rendering", "right": false },
+              { "answer": "Stops physics", "right": false },
+              { "answer": "Manages animations", "right": false }
+            ]
+          },
+          {
+            "title": "What is the benefit of 'Rigidbody.freezeRotation'?",
+            "short_title": "freezeRotation",
+            "answers": [
+              { "answer": "Prevents unwanted physics rotation", "right": true },
+              { "answer": "Renders frozen objects", "right": false },
+              { "answer": "Stops movement", "right": false },
+              { "answer": "Handles input", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'PhysicsSceneExtensions.GetPhysicsScene()' do?",
+            "short_title": "GetPhysicsScene",
+            "answers": [
+              { "answer": "Retrieves a scene’s physics context", "right": true },
+              { "answer": "Renders physics scenes", "right": false },
+              { "answer": "Stops physics scenes", "right": false },
+              { "answer": "Manages UI", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'Physics.defaultPhysicsScene'?",
+            "short_title": "defaultPhysicsScene",
+            "answers": [
+              { "answer": "Accesses the global physics simulation", "right": true },
+              { "answer": "Renders default scenes", "right": false },
+              { "answer": "Stops physics", "right": false },
+              { "answer": "Handles animations", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'Rigidbody2D.gravityScale' customize?",
+            "short_title": "gravityScale",
+            "answers": [
+              { "answer": "The strength of gravity on a 2D object", "right": true },
+              { "answer": "Rendering scale", "right": false },
+              { "answer": "Physics stop scale", "right": false },
+              { "answer": "Animation scale", "right": false }
+            ]
+          },
+          {
+            "title": "What is the advantage of 'Physics.OverlapSphereNonAlloc()'?",
+            "short_title": "OverlapSphereNonAlloc",
+            "answers": [
+              { "answer": "Avoids allocations for performance", "right": true },
+              { "answer": "Improves rendering", "right": false },
+              { "answer": "Stops overlaps", "right": false },
+              { "answer": "Handles input", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'PhysX.PxCooking' enable in Unity?",
+            "short_title": "PxCooking",
+            "answers": [
+              { "answer": "Preprocesses collision meshes for efficiency", "right": true },
+              { "answer": "Renders collision", "right": false },
+              { "answer": "Stops physics cooking", "right": false },
+              { "answer": "Manages UI", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'Physics.reuseCollisionCallbacks'?",
+            "short_title": "reuseCollisionCallbacks",
+            "answers": [
+              { "answer": "Reuses collision data to reduce overhead", "right": true },
+              { "answer": "Renders callbacks", "right": false },
+              { "answer": "Stops collisions", "right": false },
+              { "answer": "Handles animations", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'PhysicsScene.IsValid()' check?",
+            "short_title": "IsValid",
+            "answers": [
+              { "answer": "If a physics scene is properly initialized", "right": true },
+              { "answer": "Rendering validity", "right": false },
+              { "answer": "Physics stop validity", "right": false },
+              { "answer": "Animation validity", "right": false }
+            ]
+          }
+        ],
+        "C# Advanced Techniques and Low-Level Optimization": [
+          {
+            "title": "What is the primary benefit of using 'unsafe' code in C# within Unity?",
+            "short_title": "unsafe code",
+            "answers": [
+              { "answer": "Direct memory access for performance", "right": true },
+              { "answer": "Improved rendering", "right": false },
+              { "answer": "Physics optimization", "right": false },
+              { "answer": "UI management", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'fixed' keyword achieve in an unsafe C# block?",
+            "short_title": "fixed keyword",
+            "answers": [
+              { "answer": "Pins memory to prevent GC relocation", "right": true },
+              { "answer": "Stops memory access", "right": false },
+              { "answer": "Renders fixed data", "right": false },
+              { "answer": "Handles animations", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'Span<T>' in low-level C# optimization?",
+            "short_title": "Span<T>",
+            "answers": [
+              { "answer": "Provides a safe, allocation-free memory view", "right": true },
+              { "answer": "Increases allocations", "right": false },
+              { "answer": "Renders memory", "right": false },
+              { "answer": "Stops physics", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'System.Runtime.InteropServices.Marshal' enable in C#?",
+            "short_title": "Marshal",
+            "answers": [
+              { "answer": "Interop with unmanaged code and memory", "right": true },
+              { "answer": "Rendering interop", "right": false },
+              { "answer": "Physics interop", "right": false },
+              { "answer": "Animation interop", "right": false }
+            ]
+          },
+          {
+            "title": "What is the advantage of 'stackalloc' in C# for Unity?",
+            "short_title": "stackalloc",
+            "answers": [
+              { "answer": "Allocates memory on the stack, avoiding GC", "right": true },
+              { "answer": "Improves rendering", "right": false },
+              { "answer": "Stops memory allocation", "right": false },
+              { "answer": "Handles physics", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'System.Threading.ThreadPool.UnsafeQueueUserWorkItem()' do?",
+            "short_title": "UnsafeQueueUserWorkItem",
+            "answers": [
+              { "answer": "Queues work without capturing execution context", "right": true },
+              { "answer": "Renders thread work", "right": false },
+              { "answer": "Stops threading", "right": false },
+              { "answer": "Manages UI", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'Memory<T>' in advanced C# optimization?",
+            "short_title": "Memory<T>",
+            "answers": [
+              { "answer": "Manages memory blocks with ownership semantics", "right": true },
+              { "answer": "Handles rendering memory", "right": false },
+              { "answer": "Stops memory use", "right": false },
+              { "answer": "Manages physics memory", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'NativeMemory.Alloc()' provide in Unity’s unsafe context?",
+            "short_title": "NativeMemory.Alloc",
+            "answers": [
+              { "answer": "Allocates unmanaged memory for performance", "right": true },
+              { "answer": "Renders native memory", "right": false },
+              { "answer": "Stops allocation", "right": false },
+              { "answer": "Handles animations", "right": false }
+            ]
+          },
+          {
+            "title": "What is the benefit of 'System.Runtime.CompilerServices.Unsafe' class?",
+            "short_title": "Unsafe class",
+            "answers": [
+              { "answer": "Provides safe wrappers for pointer operations", "right": true },
+              { "answer": "Improves physics", "right": false },
+              { "answer": "Renders unsafe data", "right": false },
+              { "answer": "Stops optimization", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'ThreadLocal<T>' optimize in multithreaded C#?",
+            "short_title": "ThreadLocal<T>",
+            "answers": [
+              { "answer": "Provides per-thread variable instances", "right": true },
+              { "answer": "Stops threading", "right": false },
+              { "answer": "Renders threads", "right": false },
+              { "answer": "Handles UI", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'System.Buffers.MemoryPool<T>' in Unity?",
+            "short_title": "MemoryPool<T>",
+            "answers": [
+              { "answer": "Manages reusable memory buffers", "right": true },
+              { "answer": "Renders memory pools", "right": false },
+              { "answer": "Stops memory pooling", "right": false },
+              { "answer": "Manages physics", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'Volatile.Write()' ensure in C# threading?",
+            "short_title": "Volatile.Write",
+            "answers": [
+              { "answer": "Immediate visibility of writes across threads", "right": true },
+              { "answer": "Stops threading", "right": false },
+              { "answer": "Renders writes", "right": false },
+              { "answer": "Handles animations", "right": false }
+            ]
+          },
+          {
+            "title": "What is the advantage of 'ref struct' in C# for Unity?",
+            "short_title": "ref struct",
+            "answers": [
+              { "answer": "Restricts to stack-only, reducing GC pressure", "right": true },
+              { "answer": "Improves rendering", "right": false },
+              { "answer": "Stops structs", "right": false },
+              { "answer": "Manages physics", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'System.Runtime.InteropServices.GCHandle.Alloc()' do?",
+            "short_title": "GCHandle.Alloc",
+            "answers": [
+              { "answer": "Pins managed objects for unmanaged access", "right": true },
+              { "answer": "Renders handles", "right": false },
+              { "answer": "Stops GC", "right": false },
+              { "answer": "Handles UI", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'System.Threading.Tasks.ParallelOptions'?",
+            "short_title": "ParallelOptions",
+            "answers": [
+              { "answer": "Configures parallel task execution", "right": true },
+              { "answer": "Stops parallel tasks", "right": false },
+              { "answer": "Renders tasks", "right": false },
+              { "answer": "Manages physics", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'NativeArray<T>.CopyFrom()' optimize in Unity?",
+            "short_title": "NativeArray.CopyFrom",
+            "answers": [
+              { "answer": "Fast data transfer to unmanaged memory", "right": true },
+              { "answer": "Improves rendering", "right": false },
+              { "answer": "Stops copying", "right": false },
+              { "answer": "Handles animations", "right": false }
+            ]
+          },
+          {
+            "title": "What is the advantage of 'System.Runtime.CompilerServices.InlineArray'?",
+            "short_title": "InlineArray",
+            "answers": [
+              { "answer": "Reduces overhead for small fixed-size arrays", "right": true },
+              { "answer": "Renders arrays", "right": false },
+              { "answer": "Stops array use", "right": false },
+              { "answer": "Manages physics", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'System.Threading.Barrier' provide in C#?",
+            "short_title": "Barrier",
+            "answers": [
+              { "answer": "Synchronizes threads at a common point", "right": true },
+              { "answer": "Stops threading", "right": false },
+              { "answer": "Renders barriers", "right": false },
+              { "answer": "Handles UI", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'System.Buffers.IBufferWriter<T>'?",
+            "short_title": "IBufferWriter<T>",
+            "answers": [
+              { "answer": "Writes data efficiently to buffers", "right": true },
+              { "answer": "Stops buffer writing", "right": false },
+              { "answer": "Renders buffers", "right": false },
+              { "answer": "Manages physics", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'System.Runtime.GCSettings.LatencyMode' control?",
+            "short_title": "LatencyMode",
+            "answers": [
+              { "answer": "GC latency behavior for performance tuning", "right": true },
+              { "answer": "Rendering latency", "right": false },
+              { "answer": "Physics latency", "right": false },
+              { "answer": "Animation latency", "right": false }
+            ]
+          }
+        ],
+        "Animation Rigging and Procedural Animation": [
+          {
+            "title": "What is the primary purpose of Unity’s Animation Rigging package?",
+            "short_title": "Animation Rigging purpose",
+            "answers": [
+              { "answer": "Runtime rigging for procedural animation", "right": true },
+              { "answer": "Rendering animations", "right": false },
+              { "answer": "Physics rigging", "right": false },
+              { "answer": "UI animation", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'RigBuilder' do in Unity’s Animation Rigging?",
+            "short_title": "RigBuilder",
+            "answers": [
+              { "answer": "Manages and evaluates rigging constraints", "right": true },
+              { "answer": "Stops rigging", "right": false },
+              { "answer": "Renders rigs", "right": false },
+              { "answer": "Handles physics", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'TwoBoneIKConstraint' in Animation Rigging?",
+            "short_title": "TwoBoneIKConstraint",
+            "answers": [
+              { "answer": "Solves IK for a two-bone chain", "right": true },
+              { "answer": "Renders IK", "right": false },
+              { "answer": "Stops IK", "right": false },
+              { "answer": "Manages UI", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'MultiAimConstraint' achieve in Unity?",
+            "short_title": "MultiAimConstraint",
+            "answers": [
+              { "answer": "Orients a bone toward multiple targets", "right": true },
+              { "answer": "Stops aiming", "right": false },
+              { "answer": "Renders aim visuals", "right": false },
+              { "answer": "Handles physics", "right": false }
+            ]
+          },
+          {
+            "title": "What is the benefit of 'RigConstraint' base class?",
+            "short_title": "RigConstraint",
+            "answers": [
+              { "answer": "Enables custom rigging constraints", "right": true },
+              { "answer": "Improves rendering", "right": false },
+              { "answer": "Stops constraints", "right": false },
+              { "answer": "Manages animations", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'AnimatorJobExtensions.AddJobDependency()' do?",
+            "short_title": "AddJobDependency",
+            "answers": [
+              { "answer": "Links animator jobs to custom jobs", "right": true },
+              { "answer": "Renders jobs", "right": false },
+              { "answer": "Stops animator jobs", "right": false },
+              { "answer": "Handles physics", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'Procedural Animation' in Unity?",
+            "short_title": "Procedural Animation",
+            "answers": [
+              { "answer": "Generates animation dynamically at runtime", "right": true },
+              { "answer": "Stops animation", "right": false },
+              { "answer": "Renders static animations", "right": false },
+              { "answer": "Manages UI", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'TwistChainConstraint' control in Animation Rigging?",
+            "short_title": "TwistChainConstraint",
+            "answers": [
+              { "answer": "Distributes twist along a bone chain", "right": true },
+              { "answer": "Renders twists", "right": false },
+              { "answer": "Stops twisting", "right": false },
+              { "answer": "Handles physics", "right": false }
+            ]
+          },
+          {
+            "title": "What is the role of 'AnimationScriptPlayable' in Unity?",
+            "short_title": "AnimationScriptPlayable",
+            "answers": [
+              { "answer": "Runs custom animation logic in a PlayableGraph", "right": true },
+              { "answer": "Stops playables", "right": false },
+              { "answer": "Renders animations", "right": false },
+              { "answer": "Manages physics", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'RigTransform' attribute optimize?",
+            "short_title": "RigTransform",
+            "answers": [
+              { "answer": "Marks transforms for rigging efficiency", "right": true },
+              { "answer": "Improves rendering", "right": false },
+              { "answer": "Stops transforms", "right": false },
+              { "answer": "Handles UI", "right": false }
+            ]
+          },
+          {
+            "title": "What is the advantage of 'PlayableGraph.Evaluate()'?",
+            "short_title": "Evaluate",
+            "answers": [
+              { "answer": "Manually updates animation playables", "right": true },
+              { "answer": "Renders playables", "right": false },
+              { "answer": "Stops evaluation", "right": false },
+              { "answer": "Handles physics", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'ChainIKConstraint' solve in Unity?",
+            "short_title": "ChainIKConstraint",
+            "answers": [
+              { "answer": "IK for a multi-bone chain", "right": true },
+              { "answer": "Stops IK", "right": false },
+              { "answer": "Renders chains", "right": false },
+              { "answer": "Manages animations", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'AnimationUtility.SetAnimationEvents()'?",
+            "short_title": "SetAnimationEvents",
+            "answers": [
+              { "answer": "Adds events to an AnimationClip at runtime", "right": true },
+              { "answer": "Stops events", "right": false },
+              { "answer": "Renders events", "right": false },
+              { "answer": "Handles physics", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'RigLayer' manage in Animation Rigging?",
+            "short_title": "RigLayer",
+            "answers": [
+              { "answer": "Groups constraints for enabling/disabling", "right": true },
+              { "answer": "Renders layers", "right": false },
+              { "answer": "Stops rigging", "right": false },
+              { "answer": "Manages UI", "right": false }
+            ]
+          },
+          {
+            "title": "What is the benefit of 'Animator.Rebind()' in Unity?",
+            "short_title": "Rebind",
+            "answers": [
+              { "answer": "Resets bindings for runtime changes", "right": true },
+              { "answer": "Improves rendering", "right": false },
+              { "answer": "Stops animator", "right": false },
+              { "answer": "Handles physics", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'PlayableDirector.Evaluate()' do?",
+            "short_title": "PlayableDirector.Evaluate",
+            "answers": [
+              { "answer": "Manually updates the playable timeline", "right": true },
+              { "answer": "Renders timelines", "right": false },
+              { "answer": "Stops evaluation", "right": false },
+              { "answer": "Manages input", "right": false }
+            ]
+          },
+          {
+            "title": "What is the purpose of 'AnimationRiggingConstraint' interface?",
+            "short_title": "AnimationRiggingConstraint",
+            "answers": [
+              { "answer": "Defines custom constraint behavior", "right": true },
+              { "answer": "Stops constraints", "right": false },
+              { "answer": "Renders constraints", "right": false },
+              { "answer": "Handles physics", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'Animator.SetBoneLocalRotation()' achieve?",
+            "short_title": "SetBoneLocalRotation",
+            "answers": [
+              { "answer": "Sets a bone’s local rotation at runtime", "right": true },
+              { "answer": "Renders bone rotation", "right": false },
+              { "answer": "Stops rotation", "right": false },
+              { "answer": "Manages UI", "right": false }
+            ]
+          },
+          {
+            "title": "What is the advantage of 'AnimationPlayableOutput'?",
+            "short_title": "AnimationPlayableOutput",
+            "answers": [
+              { "answer": "Routes animation data to custom outputs", "right": true },
+              { "answer": "Improves physics", "right": false },
+              { "answer": "Renders outputs", "right": false },
+              { "answer": "Stops animations", "right": false }
+            ]
+          },
+          {
+            "title": "What does 'RigEffectorData' define in Animation Rigging?",
+            "short_title": "RigEffectorData",
+            "answers": [
+              { "answer": "Visual representation of constraint targets", "right": true },
+              { "answer": "Renders effectors", "right": false },
+              { "answer": "Stops effectors", "right": false },
+              { "answer": "Handles physics", "right": false }
+            ]
+          }
+        ]
+      }
     }
   ]
 }
