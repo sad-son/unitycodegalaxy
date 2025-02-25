@@ -67,7 +67,7 @@ namespace DefaultNamespace
             return _localData.userInfo.rank;
         }
         
-        private static void SaveData()
+        public static void SaveData()
         {
             string json = JsonUtility.ToJson(_localData, true);
             File.WriteAllText(saveFilePath, json);
