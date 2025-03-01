@@ -4432,40 +4432,88 @@
             "title": "What is a key property of convex shapes?",
             "short_title": "Convex shape property",
             "answers": [
-              { "answer": "Any line drawn between two points inside stays within the shape", "right": true },
-              { "answer": "They always have curved surfaces", "right": false },
-              { "answer": "They must have equal side lengths", "right": false },
-              { "answer": "They always contain holes", "right": false }
+              {
+                "answer": "Any line drawn between two points inside stays within the shape",
+                "right": true
+              },
+              {
+                "answer": "They always have curved surfaces",
+                "right": false
+              },
+              {
+                "answer": "They must have equal side lengths",
+                "right": false
+              },
+              {
+                "answer": "They always contain holes",
+                "right": false
+              }
             ]
           },
           {
             "title": "Which of the following is an example of a convex shape?",
             "short_title": "Convex shape example",
             "answers": [
-              { "answer": "A perfect circle", "right": true },
-              { "answer": "A star-shaped polygon", "right": false },
-              { "answer": "A boomerang", "right": false },
-              { "answer": "A crescent moon", "right": false }
+              {
+                "answer": "A perfect circle",
+                "right": true
+              },
+              {
+                "answer": "A star-shaped polygon",
+                "right": false
+              },
+              {
+                "answer": "A boomerang",
+                "right": false
+              },
+              {
+                "answer": "A crescent moon",
+                "right": false
+              }
             ]
           },
           {
             "title": "What is the advantage of using convex shapes in physics simulations?",
             "short_title": "Convex shape in physics",
             "answers": [
-              { "answer": "They allow faster and simpler collision detection", "right": true },
-              { "answer": "They provide more realistic lighting effects", "right": false },
-              { "answer": "They eliminate the need for physics engines", "right": false },
-              { "answer": "They have more detailed textures", "right": false }
+              {
+                "answer": "They allow faster and simpler collision detection",
+                "right": true
+              },
+              {
+                "answer": "They provide more realistic lighting effects",
+                "right": false
+              },
+              {
+                "answer": "They eliminate the need for physics engines",
+                "right": false
+              },
+              {
+                "answer": "They have more detailed textures",
+                "right": false
+              }
             ]
           },
           {
             "title": "Which of these algorithms is commonly used to find a convex hull?",
             "short_title": "Convex hull algorithm",
             "answers": [
-              { "answer": "QuickHull", "right": true },
-              { "answer": "A* Pathfinding", "right": false },
-              { "answer": "Ear Clipping", "right": false },
-              { "answer": "K-D Tree", "right": false }
+              {
+                "answer": "QuickHull",
+                "right": true
+              },
+              {
+                "answer": "A* Pathfinding",
+                "right": false
+              },
+              {
+                "answer": "Ear Clipping",
+                "right": false
+              },
+              {
+                "answer": "K-D Tree",
+                "right": false
+              }
             ]
           }
         ],
@@ -4691,6 +4739,48 @@
                 "right": false
               }
             ]
+          }
+        ],
+        "Ray Tracing": [
+          {
+            "question": "What is ray tracing in computer graphics?",
+            "answer": "Ray tracing is a rendering technique that simulates the way light interacts with objects to create realistic images."
+          },
+          {
+            "question": "What is the primary advantage of ray tracing over rasterization?",
+            "answer": "Ray tracing provides more realistic lighting, reflections, and shadows at the cost of higher computational power."
+          },
+          {
+            "question": "Which major hardware manufacturer introduced real-time ray tracing in consumer GPUs?",
+            "answer": "NVIDIA with RTX technology."
+          },
+          {
+            "question": "What is the fundamental principle behind ray tracing?",
+            "answer": "Tracing the path of light rays as they interact with surfaces in a scene."
+          },
+          {
+            "question": "Name one popular game engine that supports real-time ray tracing.",
+            "answer": "Unreal Engine."
+          },
+          {
+            "question": "What type of effects does ray tracing improve in rendering?",
+            "answer": "Reflections, shadows, refractions, and global illumination."
+          },
+          {
+            "question": "Which algorithm is often used to accelerate ray tracing computations?",
+            "answer": "Bounding Volume Hierarchy (BVH)."
+          },
+          {
+            "question": "What is the difference between ray tracing and path tracing?",
+            "answer": "Path tracing is a more advanced form of ray tracing that simulates global illumination by tracing multiple rays per pixel."
+          },
+          {
+            "question": "What is a ray intersection test?",
+            "answer": "A test to determine if a ray intersects with a geometric object in the scene."
+          },
+          {
+            "question": "What is a shadow ray in ray tracing?",
+            "answer": "A ray cast from a surface point toward a light source to check if the point is in shadow."
           }
         ],
         "UI and Interaction": [
