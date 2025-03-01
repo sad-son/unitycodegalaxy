@@ -48,7 +48,6 @@ namespace DefaultNamespace
 
         private void CheckRankUp()
         {
-            Debug.Log($"SAD CheckRankUp {_title.text} AllQuestionsCompleted() {AllQuestionsCompleted()}");
             if (AllQuestionsCompleted())
             {
                 _image.sprite = _completedSprite;

@@ -27,9 +27,10 @@ namespace User
         private Coroutine timerCoroutine;
         private void Start()
         {
+            UpdateLives(HealthSystem.currentHealth);
             LoadData();
             HealthSystem.OnHealthChanged += OnHealthChanged;
-            UpdateLives(HealthSystem.currentHealth);
+           
             RunTimer();
         }
 
@@ -55,7 +56,7 @@ namespace User
         private void UpdateLives(int value)
         {
             currentLives = value;
-            nextLifeTime = DateTime.Now.AddSeconds(recoveryTimeInSeconds);
+            SetNextTime(DateTime.Now.AddSeconds(recoveryTimeInSeconds));
             
             _healthText.text = value.ToString();
             
@@ -65,6 +66,10 @@ namespace User
             RunTimer();
         }
 
+        private void SetNextTime(DateTime time)
+        {
+            nextLifeTime = time;
+        }
         private void CheckMaxLives()
         {
             if (currentLives >= maxLives)
@@ -122,7 +127,6 @@ namespace User
             }
             else
             {
-                Debug.LogError($"SAD nextLifeTime {nextLifeTime} timeLeft.TotalMinutes {timeLeft.TotalMinutes} timeLeft.Seconds {timeLeft.Seconds}");
                 _timerText.text = string.Format("{0:00}:{1:00}", 
                     Mathf.FloorToInt((float)timeLeft.TotalMinutes), 
                     timeLeft.Seconds);
@@ -134,14 +138,13 @@ namespace User
             currentLives = HealthSystem.currentHealth;
         
             string savedTime = HealthSystem.nextLifeTime;
-            Debug.LogError($"LoadData {savedTime}");
             if (!string.IsNullOrEmpty(savedTime))
             {
-                nextLifeTime = DateTime.Parse(savedTime);
+                SetNextTime(DateTime.Parse(savedTime));
             }
             else
             {
-                nextLifeTime = DateTime.Now;
+                SetNextTime(DateTime.Now);
             }
 
             CheckLivesRecovery();
@@ -164,10 +167,9 @@ namespace User
                     return;
                 
                 currentLives += livesToAdd;
-                    Debug.LogError($"Lives recovered: {currentLives} livesToAdd  {livesToAdd}");
                 if (currentLives < maxLives)
                 {
-                    nextLifeTime = nextLifeTime.AddSeconds(livesToAdd * recoveryTimeInSeconds);
+                    SetNextTime(nextLifeTime.AddSeconds(livesToAdd * recoveryTimeInSeconds));
                     RunTimer();
                 }
             }
@@ -177,7 +179,7 @@ namespace User
         {
             if (currentLives < maxLives)
             {
-                nextLifeTime = DateTime.Now.AddSeconds(recoveryTimeInSeconds);
+                SetNextTime(DateTime.Now.AddSeconds(recoveryTimeInSeconds));
                 IncreaseLives();
             }
         }

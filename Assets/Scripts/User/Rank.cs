@@ -49,7 +49,6 @@ namespace DefaultNamespace.User
                 for (var i = 0; i < ranks.Count; i++)
                 {
                     var currentRank = ranks[i];
-                    Debug.LogError($"SAD {currentRank}");
                     if (currentRank.Equals(rank2Enum))
                     {
                         var index = Math.Clamp(i + 1, 0, ranks.Count - 1);

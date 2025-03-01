@@ -52,7 +52,6 @@ namespace DefaultNamespace
         public static string SetRank(string rank)
         {
             _localData.userInfo.rank = rank;
-            Debug.LogError($"SAD NextRank {_localData.userInfo.rank}");
             SaveData();
             OnRankUp?.Invoke();
             return _localData.userInfo.rank;
@@ -61,7 +60,6 @@ namespace DefaultNamespace
         public static string NextRank()
         {
             _localData.userInfo.rank = _localData.userInfo.rank.NextRank();
-            Debug.LogError($"SAD NextRank {_localData.userInfo.rank}");
             SaveData();
             OnRankUp?.Invoke();
             return _localData.userInfo.rank;
