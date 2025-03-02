@@ -56,6 +56,8 @@ namespace DefaultNamespace
             image.sprite = redImage;
             await UniTask.Delay(TimeSpan.FromSeconds(answerCheckedDelay), cancellationToken: this.GetCancellationTokenOnDestroy());
             image.sprite = defaultImage;
+            
+            AdsManager.instance.LoadInterstitial();
         }
     }
 }

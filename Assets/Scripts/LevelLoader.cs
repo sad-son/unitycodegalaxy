@@ -35,7 +35,7 @@ namespace DefaultNamespace
             Instance = this;
             Load();
         }
-
+        
         private void Load()
         {
             var index = currentLevel - 1;

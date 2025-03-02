@@ -628,6 +628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 712956164}
   - component: {fileID: 712956165}
+  - component: {fileID: 712956166}
   m_Layer: 0
   m_Name: ---LEVEL LOADER---
   m_TagString: Untagged
@@ -675,6 +676,18 @@ MonoBehaviour:
   rankChapters: []
   subjectChapters: []
   questionChapters: []
+--- !u!114 &712956166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712956163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9822b1123e8f4e68bea6fd08b7fd4d14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &757537617
 GameObject:
   m_ObjectHideFlags: 0
