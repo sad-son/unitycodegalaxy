@@ -51,7 +51,7 @@ namespace DefaultNamespace
                 _onComplete?.Invoke();
                 return;
             }
-            
+
             HealthSystem.Decrease();
             image.sprite = redImage;
             await UniTask.Delay(TimeSpan.FromSeconds(answerCheckedDelay), cancellationToken: this.GetCancellationTokenOnDestroy());

@@ -33,14 +33,12 @@ namespace DefaultNamespace
 
         public static void SaveLives(int value, string nextLifeTime)
         {
-            Debug.LogError($"SaveLives {nextLifeTime}");
             LocalDataSystem.localData.userInfo.nextLifeTime = nextLifeTime;
             SaveIfChanged(value);
         }
         
         public static void StartRestore(string nextLifeTime)
         {
-            Debug.LogError($"SaveLives {nextLifeTime}");
             LocalDataSystem.localData.userInfo.nextLifeTime = nextLifeTime;
             LocalDataSystem.SaveData();
         }

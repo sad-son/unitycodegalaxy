@@ -629,6 +629,8 @@ GameObject:
   - component: {fileID: 712956164}
   - component: {fileID: 712956165}
   - component: {fileID: 712956166}
+  - component: {fileID: 712956167}
+  - component: {fileID: 712956168}
   m_Layer: 0
   m_Name: ---LEVEL LOADER---
   m_TagString: Untagged
@@ -686,6 +688,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9822b1123e8f4e68bea6fd08b7fd4d14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  androidGameID: 5805203
+  iOSGameID: 5805202
+  testMode: 1
+  androidAdID: Interstitial_Android
+  iOSAdID: Interstitial_iOS
+  unityBannerAd: {fileID: 0}
+--- !u!114 &712956167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712956163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc06e4ec0b74f32904b9fdd81940312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &712956168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712956163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250c59da99124963be27d3f85c0d20f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &757537617
@@ -838,12 +870,24 @@ PrefabInstance:
       propertyPath: recoveryTimeInSeconds
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2728067395159099509, guid: 655e8b7d84ca6d148a227dc5cee090d2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728067395159099509, guid: 655e8b7d84ca6d148a227dc5cee090d2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0999998
+      objectReference: {fileID: 0}
     - target: {fileID: 5172239366034781187, guid: 655e8b7d84ca6d148a227dc5cee090d2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5172239366034781187, guid: 655e8b7d84ca6d148a227dc5cee090d2, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172239366034781187, guid: 655e8b7d84ca6d148a227dc5cee090d2, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

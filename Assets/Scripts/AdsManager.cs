@@ -1,55 +1,71 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Unity.Services.LevelPlay;
+using UnityEngine.Advertisements;
 
 namespace DefaultNamespace
 {
-    using com.unity3d.mediation;
-
     public class AdsManager : MonoBehaviour
     {
+        [SerializeField] string androidGameID = "5805203";
+        [SerializeField] string iOSGameID = "5805202";
+        [SerializeField] bool testMode = true;
+        [SerializeField] string androidAdID = "Interstitial_Android";
+        [SerializeField] string iOSAdID = "Interstitial_iOS";
+        [SerializeField] BannerAd unityBannerAd;
+        
         public static AdsManager instance;
-        private LevelPlayBannerAd bannerAd;
         private LevelPlayInterstitialAd interstitialAd;
-
+        
+        private string gameID;
+        private string adID;
 #if UNITY_ANDROID
-        string appKey = "213254fc5";
-        string bannerAdUnitId = "ubrowrk1k4t7jt05";
-        string interstitialAdUnitId = "jo924pgb6ga79bj9";
+        string appKey = "213254fc5"; //iron-source
+       // string appKey = "19b5509a-79f2-4586-b92d-0df96a71ac10"; //unity
 #elif UNITY_IPHONE
     string appKey = "8545d445";
-    string bannerAdUnitId = "iep3rxsyp9na3rw8";
-    string interstitialAdUnitId = "wmgt0712uuux8ju4";
 #else
     string appKey = "unexpected_platform";
-    string bannerAdUnitId = "unexpected_platform";
-    string interstitialAdUnitId = "unexpected_platform";
 #endif
+        
+        public void LoadInterstitial()
+        {
+            InterstitialAd.instance.ShowAd();
+        }
 
         private void Awake()
         {
             instance = this;
+            
+            gameID = (Application.platform == RuntimePlatform.IPhonePlayer) ? iOSGameID : androidGameID;
+            adID = (Application.platform == RuntimePlatform.IPhonePlayer) ? iOSAdID : androidAdID;
         }
 
         public void Start()
         {
             Debug.Log("unity-script: IronSource.Agent.validateIntegration");
+
+            IronSourceConfig.Instance.setClientSideCallbacks(true);
+
+            var id = IronSource.Agent.getAdvertiserId();
+            Debug.Log("unity-script: IronSource.Agent.getAdvertiserId : " + id);
+            
             IronSource.Agent.validateIntegration();
-
-            Debug.Log("unity-script: unity version" + IronSource.unityVersion());
-
+            IronSource.Agent.setConsent(true);
             // SDK init
             Debug.Log("unity-script: LevelPlay SDK initialization");
-            LevelPlayAdFormat[] legacyAdFormats = new[] { LevelPlayAdFormat.REWARDED };
+            com.unity3d.mediation.LevelPlayAdFormat[] legacyAdFormats = new[]
+            {
+                com.unity3d.mediation.LevelPlayAdFormat.INTERSTITIAL,
+                com.unity3d.mediation.LevelPlayAdFormat.BANNER,
+                
+            };
+            IronSource.Agent.init(appKey, IronSourceAdUnits.INTERSTITIAL, IronSourceAdUnits.BANNER);
             LevelPlay.Init(appKey, adFormats: legacyAdFormats);
-
             LevelPlay.OnInitSuccess += SdkInitializationCompletedEvent;
             LevelPlay.OnInitFailed += SdkInitializationFailedEvent;
-        }
-
-        public void LoadInterstitial()
-        {
-            interstitialAd.LoadAd();
+           
         }
 
         void EnableAds()
@@ -65,98 +81,14 @@ namespace DefaultNamespace
             IronSourceRewardedVideoEvents.onAdShowFailedEvent += RewardedVideoOnAdShowFailedEvent;
             IronSourceRewardedVideoEvents.onAdRewardedEvent += RewardedVideoOnAdRewardedEvent;
             IronSourceRewardedVideoEvents.onAdClickedEvent += RewardedVideoOnAdClickedEvent;
-
-            bannerAd = new LevelPlayBannerAd(bannerAdUnitId);
-
-            // Register to Banner events
-            bannerAd.OnAdLoaded += BannerOnAdLoadedEvent;
-            bannerAd.OnAdLoadFailed += BannerOnAdLoadFailedEvent;
-            bannerAd.OnAdDisplayed += BannerOnAdDisplayedEvent;
-            bannerAd.OnAdDisplayFailed += BannerOnAdDisplayFailedEvent;
-            bannerAd.OnAdClicked += BannerOnAdClickedEvent;
-            bannerAd.OnAdCollapsed += BannerOnAdCollapsedEvent;
-            bannerAd.OnAdLeftApplication += BannerOnAdLeftApplicationEvent;
-            bannerAd.OnAdExpanded += BannerOnAdExpandedEvent;
-
-            // Create Interstitial object
-            interstitialAd = new LevelPlayInterstitialAd(interstitialAdUnitId);
-
-            // Register to Interstitial events
-            interstitialAd.OnAdLoaded += InterstitialOnAdLoadedEvent;
-            interstitialAd.OnAdLoadFailed += InterstitialOnAdLoadFailedEvent;
-            interstitialAd.OnAdDisplayed += InterstitialOnAdDisplayedEvent;
-            interstitialAd.OnAdDisplayFailed += InterstitialOnAdDisplayFailedEvent;
-            interstitialAd.OnAdClicked += InterstitialOnAdClickedEvent;
-            interstitialAd.OnAdClosed += InterstitialOnAdClosedEvent;
-            interstitialAd.OnAdInfoChanged += InterstitialOnAdInfoChangedEvent;
+            InterstitialAd.instance.Initialize();
+            BannerAd.instance.LoadBanner();
         }
 
         void OnApplicationPause(bool isPaused)
         {
             Debug.Log("unity-script: OnApplicationPause = " + isPaused);
             IronSource.Agent.onApplicationPause(isPaused);
-        }
-
-        public void OnGUI()
-        {
-            return;
-            GUI.backgroundColor = Color.blue;
-            GUI.skin.button.fontSize = (int)(0.035f * Screen.width);
-
-
-            Rect showRewardedVideoButton = new Rect(0.10f * Screen.width, 0.15f * Screen.height, 0.80f * Screen.width,
-                0.08f * Screen.height);
-            if (GUI.Button(showRewardedVideoButton, "Show Rewarded Video"))
-            {
-                Debug.Log("unity-script: ShowRewardedVideoButtonClicked");
-                if (IronSource.Agent.isRewardedVideoAvailable())
-                {
-                    IronSource.Agent.showRewardedVideo();
-                }
-                else
-                {
-                    Debug.Log("unity-script: IronSource.Agent.isRewardedVideoAvailable - False");
-                }
-            }
-
-            Rect loadInterstitialButton = new Rect(0.10f * Screen.width, 0.25f * Screen.height, 0.35f * Screen.width,
-                0.08f * Screen.height);
-            if (GUI.Button(loadInterstitialButton, "Load Interstitial"))
-            {
-                Debug.Log("unity-script: LoadInterstitialButtonClicked");
-                interstitialAd.LoadAd();
-            }
-
-            Rect showInterstitialButton = new Rect(0.55f * Screen.width, 0.25f * Screen.height, 0.35f * Screen.width,
-                0.08f * Screen.height);
-            if (GUI.Button(showInterstitialButton, "Show Interstitial"))
-            {
-                Debug.Log("unity-script: ShowInterstitialButtonClicked");
-                if (interstitialAd.IsAdReady())
-                {
-                    interstitialAd.ShowAd();
-                }
-                else
-                {
-                    Debug.Log("unity-script: Levelplay Interstital Ad Ready? - False");
-                }
-            }
-
-            Rect loadBannerButton = new Rect(0.10f * Screen.width, 0.35f * Screen.height, 0.35f * Screen.width,
-                0.08f * Screen.height);
-            if (GUI.Button(loadBannerButton, "Load Banner"))
-            {
-                Debug.Log("unity-script: loadBannerButtonClicked");
-                bannerAd.LoadAd();
-            }
-
-            Rect hideBannerButton = new Rect(0.55f * Screen.width, 0.35f * Screen.height, 0.35f * Screen.width,
-                0.08f * Screen.height);
-            if (GUI.Button(hideBannerButton, "Hide Banner"))
-            {
-                Debug.Log("unity-script: HideButtonClicked");
-                bannerAd.HideAd();
-            }
         }
 
         #region Init callback handlers
@@ -319,7 +251,6 @@ namespace DefaultNamespace
 
         private void OnDisable()
         {
-            bannerAd?.DestroyAd();
             interstitialAd?.DestroyAd();
         }
     }

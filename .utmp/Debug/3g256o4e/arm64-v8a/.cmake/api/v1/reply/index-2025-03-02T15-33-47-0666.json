@@ -8,10 +8,10 @@
 		},
 		"paths" : 
 		{
-			"cmake" : "D:/Applications/Unity Editor/6000.0.23f1/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/cmake/3.22.1/bin/cmake.exe",
-			"cpack" : "D:/Applications/Unity Editor/6000.0.23f1/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/cmake/3.22.1/bin/cpack.exe",
-			"ctest" : "D:/Applications/Unity Editor/6000.0.23f1/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/cmake/3.22.1/bin/ctest.exe",
-			"root" : "D:/Applications/Unity Editor/6000.0.23f1/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/cmake/3.22.1/share/cmake-3.22"
+			"cmake" : "D:/Applications/Unity Editor/6000.0.40f1/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/cmake/3.22.1/bin/cmake.exe",
+			"cpack" : "D:/Applications/Unity Editor/6000.0.40f1/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/cmake/3.22.1/bin/cpack.exe",
+			"ctest" : "D:/Applications/Unity Editor/6000.0.40f1/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/cmake/3.22.1/bin/ctest.exe",
+			"root" : "D:/Applications/Unity Editor/6000.0.40f1/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/cmake/3.22.1/share/cmake-3.22"
 		},
 		"version" : 
 		{
@@ -26,7 +26,7 @@
 	"objects" : 
 	[
 		{
-			"jsonFile" : "codemodel-v2-173efabe9d158650ef39.json",
+			"jsonFile" : "codemodel-v2-41a06018db399a6f8976.json",
 			"kind" : "codemodel",
 			"version" : 
 			{
@@ -35,7 +35,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cache-v2-acd5e7603c467d995b1e.json",
+			"jsonFile" : "cache-v2-95d4ebfbb64e4f9f5102.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -44,7 +44,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cmakeFiles-v1-b9844496685ac06a98c3.json",
+			"jsonFile" : "cmakeFiles-v1-b03a9b70b383c42c4685.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
@@ -59,7 +59,7 @@
 		{
 			"cache-v2" : 
 			{
-				"jsonFile" : "cache-v2-acd5e7603c467d995b1e.json",
+				"jsonFile" : "cache-v2-95d4ebfbb64e4f9f5102.json",
 				"kind" : "cache",
 				"version" : 
 				{
@@ -69,7 +69,7 @@
 			},
 			"cmakeFiles-v1" : 
 			{
-				"jsonFile" : "cmakeFiles-v1-b9844496685ac06a98c3.json",
+				"jsonFile" : "cmakeFiles-v1-b03a9b70b383c42c4685.json",
 				"kind" : "cmakeFiles",
 				"version" : 
 				{
@@ -79,7 +79,7 @@
 			},
 			"codemodel-v2" : 
 			{
-				"jsonFile" : "codemodel-v2-173efabe9d158650ef39.json",
+				"jsonFile" : "codemodel-v2-41a06018db399a6f8976.json",
 				"kind" : "codemodel",
 				"version" : 
 				{
