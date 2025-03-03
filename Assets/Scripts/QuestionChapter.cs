@@ -16,7 +16,7 @@ namespace DefaultNamespace
         private Question _currentQuestion;
         private SubjectChapter _subjectChapter;
         private Button _button;
-        private Quiz _quiz;
+        private static Quiz _quiz;
 
         public event Action onCompleted;
         
@@ -24,10 +24,11 @@ namespace DefaultNamespace
         {
             _button = GetComponent<Button>();
             _button.onClick.AddListener(OnClick);
+            HealthSystem.OnHealthChanged += OnHealthChanged;
         }
-
         private void OnDestroy()
         {
+            HealthSystem.OnHealthChanged -= OnHealthChanged;
             _button.onClick.RemoveAllListeners();
             onCompleted = null;
         }
@@ -53,12 +54,28 @@ namespace DefaultNamespace
 
         public void OnClick()
         {
+            if (HealthSystem.currentHealth <= 0)
+            {
+                TextReminder.Instance.Notify("Not enough lives");
+                return;
+            }
+            
             SetActiveQuestionChapters(false);
-            _quiz = Instantiate(LevelLoader.instance.quizPrefab, LevelLoader.instance.canvas);
+            if (_quiz == null)
+                _quiz = Instantiate(LevelLoader.instance.quizPrefab, LevelLoader.instance.safeArea);
+            
+            _quiz.gameObject.SetActive(true);
             _quiz.Setup(_currentQuestion);
             _quiz.onCompleted += OnCompleted;
         }
         
+        private void OnHealthChanged(int value)
+        {
+            if (value <= 0)
+                CloseQuiz();
+        }
+        
+
         private void OnCompleted()
         {
             LocalDataSystem.SaveQuestion(_currentQuestion.title);
@@ -88,8 +105,14 @@ namespace DefaultNamespace
 
         private void CompleteChapter()
         {
+            CloseQuiz();
+        }
+
+        private void CloseQuiz()
+        {
             UpdateVisual();
-            _quiz.gameObject.SetActive(false);
+            if (_quiz)
+                _quiz.gameObject.SetActive(false);
             SetActiveQuestionChapters(true);
             LevelLoader.instance.questionChapters.ForEach(questionChapter => questionChapter.UpdateVisual());
             PopupHolder.currentPopupType = PopupType.QuestionChapter;

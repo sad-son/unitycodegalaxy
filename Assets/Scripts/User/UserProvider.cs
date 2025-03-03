@@ -28,7 +28,7 @@ namespace DefaultNamespace.User
 
         private void UpdateState()
         {
-            _rankText.text = LocalDataSystem.localData.userInfo.rank;
+            _rankText.text = LocalDataSystem.localData.userInfo.rank.Replace("Plus", "+");
         }
     }
 }

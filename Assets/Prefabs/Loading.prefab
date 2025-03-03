@@ -216,6 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405571da96c9439cb943a0d8b389e8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fakeLoadingTime: 2
+  stageTime: 1
   text: {fileID: 8670433799914082670}
 --- !u!1 &8670433799914082659
 GameObject:

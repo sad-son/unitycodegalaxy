@@ -17,6 +17,7 @@ namespace DefaultNamespace
         public static LevelLoader instance;
         
         public RectTransform canvas;
+        public RectTransform safeArea;
         public TextAsset jsonFile;
         
         public const string LevelKey = "CurrentLevel";

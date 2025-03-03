@@ -147,6 +147,11 @@ namespace User
                 SetNextTime(DateTime.Now);
             }
 
+            UpdateLives();
+        }
+
+        private void UpdateLives()
+        {
             CheckLivesRecovery();
             CheckMaxLives();
             HealthSystem.SaveLives(currentLives, nextLifeTime.ToString());
@@ -202,9 +207,10 @@ namespace User
 
         void OnApplicationPause(bool pauseStatus)
         {
-            if (pauseStatus)
+            if (!pauseStatus)
             {
-               // SaveTime();
+                UpdateLives();
+                // SaveTime();
             }
         }
     }

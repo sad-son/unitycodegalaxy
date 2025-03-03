@@ -15,6 +15,13 @@ namespace DefaultNamespace
 
         private int stage;
         private float nextStageTime;
+        
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        static void EnableLoading()
+        {
+            FindObjectOfType<Loading>(true).gameObject.SetActive(true);
+        }
+        
         private void Awake()
         {
             instance = this;
@@ -31,7 +38,8 @@ namespace DefaultNamespace
             LevelLoader.instance.Load();
             await UniTask.DelayFrame(2, cancellationToken:this.GetCancellationTokenOnDestroy());
             AdsManager.instance.Load();
-            await UniTask.Delay(TimeSpan.FromSeconds(fakeLoadingTime));
+            if (Application.platform != RuntimePlatform.WindowsEditor)
+                await UniTask.Delay(TimeSpan.FromSeconds(fakeLoadingTime));
             Close();
         }
 
