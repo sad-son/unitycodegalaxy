@@ -54,7 +54,7 @@ namespace DefaultNamespace
         public void OnClick()
         {
             SetActiveQuestionChapters(false);
-            _quiz = Instantiate(LevelLoader.Instance.quizPrefab, LevelLoader.Instance.canvas);
+            _quiz = Instantiate(LevelLoader.instance.quizPrefab, LevelLoader.instance.canvas);
             _quiz.Setup(_currentQuestion);
             _quiz.onCompleted += OnCompleted;
         }
@@ -91,14 +91,14 @@ namespace DefaultNamespace
             UpdateVisual();
             _quiz.gameObject.SetActive(false);
             SetActiveQuestionChapters(true);
-            LevelLoader.Instance.questionChapters.ForEach(questionChapter => questionChapter.UpdateVisual());
+            LevelLoader.instance.questionChapters.ForEach(questionChapter => questionChapter.UpdateVisual());
             PopupHolder.currentPopupType = PopupType.QuestionChapter;
             CloseButton.instance.gameObject.SetActive(true);
         }
 
         private void SetActiveQuestionChapters(bool state)
         {
-            LevelLoader.Instance.questionChapters.ForEach(questionChapter => questionChapter.gameObject.SetActive(state));
+            LevelLoader.instance.questionChapters.ForEach(questionChapter => questionChapter.gameObject.SetActive(state));
         }
         
     }

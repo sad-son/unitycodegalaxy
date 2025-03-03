@@ -52,7 +52,7 @@ namespace DefaultNamespace
             {
                 _image.sprite = _completedSprite;
                 _button.interactable = true;
-                if (LevelLoader.Instance.subjectChapters.Where(chapter => chapter._rankText.text == _rankText.text)
+                if (LevelLoader.instance.subjectChapters.Where(chapter => chapter._rankText.text == _rankText.text)
                     .All(chapter => chapter.AllQuestionsCompleted()))
                 {
                     LocalDataSystem.SetRank(_rankText.text.NextRank());
@@ -69,7 +69,7 @@ namespace DefaultNamespace
             _rankText.text = rank;
             UpdateState();
             PopupHolder.currentPopupType = PopupType.SubjectChapter;
-            LevelLoader.Instance.questionChapters.Clear();
+            LevelLoader.instance.questionChapters.Clear();
             CheckRankUp();
         }
 
@@ -105,10 +105,10 @@ namespace DefaultNamespace
         {
             foreach (var question in _questions)
             {
-                var instance = Instantiate(LevelLoader.Instance.questionChapterPrefab, LevelLoader.Instance.rankViewContent);
+                var instance = Instantiate(LevelLoader.instance.questionChapterPrefab, LevelLoader.instance.rankViewContent);
                 instance.Setup(question, this, CheckRankUp);
 
-                LevelLoader.Instance.questionChapters.Add(instance);
+                LevelLoader.instance.questionChapters.Add(instance);
             }
             
             SubjectChaptersClose();
@@ -118,7 +118,7 @@ namespace DefaultNamespace
         private void SubjectChaptersClose()
         {
             //_subjectChapters.ForEach(subjectChapter => subjectChapter.gameObject.SetActive(false));
-            LevelLoader.Instance.subjectChapters.ForEach(subjectChapter => subjectChapter.gameObject.SetActive(false));
+            LevelLoader.instance.subjectChapters.ForEach(subjectChapter => subjectChapter.gameObject.SetActive(false));
         }
     }
 }

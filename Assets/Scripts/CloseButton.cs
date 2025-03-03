@@ -21,7 +21,7 @@ namespace DefaultNamespace
 
         private void Start()
         {
-            _levelLoader = LevelLoader.Instance;
+            _levelLoader = LevelLoader.instance;
         }
 
         private void OnDestroy()

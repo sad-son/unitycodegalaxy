@@ -37,13 +37,12 @@ namespace DefaultNamespace
         private void Awake()
         {
             instance = this;
-            
-            gameID = (Application.platform == RuntimePlatform.IPhonePlayer) ? iOSGameID : androidGameID;
-            adID = (Application.platform == RuntimePlatform.IPhonePlayer) ? iOSAdID : androidAdID;
         }
 
-        public void Start()
+        public void Load()
         {
+            gameID = (Application.platform == RuntimePlatform.IPhonePlayer) ? iOSGameID : androidGameID;
+            adID = (Application.platform == RuntimePlatform.IPhonePlayer) ? iOSAdID : androidAdID;
             Debug.Log("unity-script: IronSource.Agent.validateIntegration");
 
             IronSourceConfig.Instance.setClientSideCallbacks(true);

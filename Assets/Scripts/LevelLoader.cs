@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using DefaultNamespace.Json;
 using Newtonsoft.Json;
+using TriInspector;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -11,7 +14,7 @@ namespace DefaultNamespace
 {
     public class LevelLoader : MonoBehaviour
     {
-        public static LevelLoader Instance;
+        public static LevelLoader instance;
         
         public RectTransform canvas;
         public TextAsset jsonFile;
@@ -29,15 +32,15 @@ namespace DefaultNamespace
         public List<SubjectChapter> subjectChapters = new();
         [FormerlySerializedAs("_questionChapters")] public List<QuestionChapter> questionChapters = new();
         private int currentLevel;
+
         private void Awake()
         {
-            currentLevel = GetLevel();
-            Instance = this;
-            Load();
+            instance = this;
         }
-        
-        private void Load()
+
+        public void Load()
         {
+            currentLevel = GetLevel();
             var index = currentLevel - 1;
             var currentIndex = index % quizItems.Length;
             Debug.Log(currentIndex);
@@ -50,21 +53,50 @@ namespace DefaultNamespace
                 
                 instance.Setup(this, quizData, subjectChapterPrefab);
             }
-            /*var question = quiz.questions[currentIndex];
-            if (!_currentQuiz)
-                _currentQuiz = Instantiate(quizPrefab, canvas);
-            
-            _currentQuiz.onCompleted += OnCompleted;
-            _currentQuiz.Setup(question);*/
+        }
 
+        [Button]
+        private void QuestionsCount()
+        {
+            var quizСontainer = JsonConvert.DeserializeObject<QuizContainer>(jsonFile.text);
+            int count = 0;
+            foreach (var quizData in quizСontainer.quizzes)
+            {
+                foreach (var questions in quizData.subjects.Values)
+                {
+                    count += questions.Count;
+                }
+            }
+            
+            Debug.Log($"total questions: {count}");
         }
         
-        private void OnCompleted()
+        [Button]
+        private void DuplicateSearch()
         {
-            currentLevel += 1;
-            currentQuiz.onCompleted -= OnCompleted;
-            SaveLevel(currentLevel);
-            Load();
+            var quizСontainer = JsonConvert.DeserializeObject<QuizContainer>(jsonFile.text);
+            var result = new StringBuilder();
+    
+            foreach (var quizData in quizСontainer.quizzes)
+            {
+                foreach (var questions in quizData.subjects.Values)
+                {
+                    foreach (var question in questions)
+                    {
+                        var thisQuestionCount = quizСontainer.quizzes
+                            .SelectMany(quiz => quiz.subjects.Values)
+                            .SelectMany(questionsSearch => questionsSearch)
+                            .Count(searchQuestion => searchQuestion.title == question.title);
+
+                        if (thisQuestionCount > 1)
+                        {
+                            result.AppendLine($"Duplicate: {question.title} count: {thisQuestionCount}");
+                        }
+                    }
+                }
+            }
+            
+            Debug.Log($"duplicates: {result}");
         }
 
         public void SaveLevel(int level)

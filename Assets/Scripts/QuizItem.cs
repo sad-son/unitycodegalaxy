@@ -47,12 +47,14 @@ namespace DefaultNamespace
             if (rightAnswer)
             {
                 image.sprite = greenImage;
+                SoundManager.Instance.PlayCorrectAnswer();
                 await UniTask.Delay(TimeSpan.FromSeconds(answerCheckedDelay), cancellationToken: this.GetCancellationTokenOnDestroy());
                 _onComplete?.Invoke();
                 return;
             }
 
             HealthSystem.Decrease();
+            SoundManager.Instance.PlayWrongAnswer();
             image.sprite = redImage;
             await UniTask.Delay(TimeSpan.FromSeconds(answerCheckedDelay), cancellationToken: this.GetCancellationTokenOnDestroy());
             image.sprite = defaultImage;
