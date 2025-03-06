@@ -6,6 +6,8 @@ namespace DefaultNamespace
 {
     public class Shop : MonoBehaviour
     {
+        public const string infinite_lives_id = "InfiniteLives";
+        
         public static Shop Instance;
 
         public Button purchaseButton;
@@ -27,7 +29,12 @@ namespace DefaultNamespace
         private void OnClickPurchaseButton()
         {
             if (!string.IsNullOrEmpty(_selectedPurchaseId))
+            {
                 Debug.Log($"OnClickPurchaseButton {_selectedPurchaseId}");
+                
+                if (_selectedPurchaseId == infinite_lives_id)
+                    HealthSystem.BuyInfiniteLives();
+            }
         }
 
         private void OnDestroy()
@@ -48,7 +55,7 @@ namespace DefaultNamespace
         {
             infiniteLivesButton.image.sprite = _selectedSprite;
             noAdsButton.image.sprite = _defaultSprite;
-            _selectedPurchaseId = "InfiniteLives";
+            _selectedPurchaseId = infinite_lives_id;
         }
     }
 }

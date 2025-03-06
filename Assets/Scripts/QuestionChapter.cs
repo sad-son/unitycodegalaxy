@@ -28,6 +28,8 @@ namespace DefaultNamespace
         }
         private void OnDestroy()
         {
+            if (_quiz)
+                _quiz.onCompleted -= OnCompleted;
             HealthSystem.OnHealthChanged -= OnHealthChanged;
             _button.onClick.RemoveAllListeners();
             onCompleted = null;
@@ -105,7 +107,9 @@ namespace DefaultNamespace
 
         private void CompleteChapter()
         {
+            _quiz.onCompleted -= OnCompleted;
             CloseQuiz();
+            CloseButton.instance.CloseQuestionChapter();
         }
 
         private void CloseQuiz()

@@ -36,10 +36,7 @@ namespace DefaultNamespace
   
             if (PopupHolder.currentPopupType == PopupType.QuestionChapter)
             {
-                PopupHolder.currentPopupType = PopupType.SubjectChapter;
-                _levelLoader.subjectChapters.ForEach(subjectChapter => subjectChapter.gameObject.SetActive(true));
-                _levelLoader.questionChapters.ForEach(chapter => Destroy(chapter.gameObject));
-                _levelLoader.questionChapters.Clear();
+                CloseQuestionChapter();
                 return;
             }
             
@@ -51,6 +48,14 @@ namespace DefaultNamespace
                 _levelLoader.subjectChapters.Clear();
                 return;
             }
+        }
+
+        public void CloseQuestionChapter()
+        {
+            PopupHolder.currentPopupType = PopupType.SubjectChapter;
+            _levelLoader.subjectChapters.ForEach(subjectChapter => subjectChapter.gameObject.SetActive(true));
+            _levelLoader.questionChapters.ForEach(chapter => Destroy(chapter.gameObject));
+            _levelLoader.questionChapters.Clear();
         }
     }
 }

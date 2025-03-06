@@ -15,11 +15,15 @@ namespace DefaultNamespace
             SaveIfChanged(value);
         }
 
-        private static void SaveIfChanged(int value)
+        public static void SaveIfChanged(int value)
         {
             var oldValue = LocalDataSystem.localData.userInfo.health;
             if (oldValue == value) return;
-            
+
+            if (oldValue > value && LocalDataSystem.localData.userInfo.infiniteLives)
+            {
+                return;
+            }
             LocalDataSystem.localData.userInfo.health = value;
             LocalDataSystem.SaveData();
             OnHealthChanged?.Invoke(LocalDataSystem.localData.userInfo.health);
@@ -33,13 +37,23 @@ namespace DefaultNamespace
 
         public static void SaveLives(int value, string nextLifeTime)
         {
-            LocalDataSystem.localData.userInfo.nextLifeTime = nextLifeTime;
+            if (nextLifeTime != DateTime.MinValue.ToString())
+                LocalDataSystem.localData.userInfo.nextLifeTime = nextLifeTime;
             SaveIfChanged(value);
         }
         
-        public static void StartRestore(string nextLifeTime)
+        public static void SaveNextLiftTime(string nextLifeTime)
         {
-            LocalDataSystem.localData.userInfo.nextLifeTime = nextLifeTime;
+            if (nextLifeTime != DateTime.MinValue.ToString())
+            {
+                LocalDataSystem.localData.userInfo.nextLifeTime = nextLifeTime;
+                LocalDataSystem.SaveData();
+            }
+        }
+        
+        public static void BuyInfiniteLives()
+        {
+            LocalDataSystem.localData.userInfo.infiniteLives = true;
             LocalDataSystem.SaveData();
         }
         

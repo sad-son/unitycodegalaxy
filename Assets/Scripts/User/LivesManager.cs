@@ -21,25 +21,38 @@ namespace User
         
         [SerializeField] private TMP_Text _timerText;
         [SerializeField] private RectTransform _targetTimerRect;
-        
-        private int currentLives;
+
+        private int currentLives => HealthSystem.currentHealth;
         private DateTime nextLifeTime;
         private Coroutine timerCoroutine;
+        private bool _isInitialized;
         private void Start()
         {
-            UpdateLives(HealthSystem.currentHealth);
             LoadData();
+            UpdateLivesVisual(HealthSystem.currentHealth);
             HealthSystem.OnHealthChanged += OnHealthChanged;
            
             RunTimer();
+            _isInitialized = true;
         }
 
         private void RunTimer()
         {
             if (HealthSystem.currentHealth >= maxLives)
+            {
+                if (timerCoroutine != null)
+                {
+                    UpdateTimer();
+                    StopCoroutine(timerCoroutine);
+                    timerCoroutine = null;
+                }
                 return;
-            
-            timerCoroutine = StartCoroutine(TimerCoroutine());
+            }
+
+            if (timerCoroutine == null)
+            {
+                timerCoroutine = StartCoroutine(TimerCoroutine());
+            }
         }
 
         private void OnDestroy()
@@ -49,15 +62,18 @@ namespace User
 
         private void OnHealthChanged(int value)
         {
-            UpdateLives(value);
-            SaveTime();
+            if (value < maxLives)
+            {
+                SetNextTime(DateTime.Now.AddSeconds(recoveryTimeInSeconds));
+                RunTimer();
+            }
+            
+            UpdateLivesVisual(value);
         }
 
-        private void UpdateLives(int value)
+        private void UpdateLivesVisual(int value)
         {
-            currentLives = value;
-            SetNextTime(DateTime.Now.AddSeconds(recoveryTimeInSeconds));
-            
+            HealthSystem.SaveIfChanged(value);
             _healthText.text = value.ToString();
             
             PulseAnimationAsync(_targetLivesRect).Forget();
@@ -69,14 +85,19 @@ namespace User
         private void SetNextTime(DateTime time)
         {
             nextLifeTime = time;
+            SaveTime();
         }
+        
         private void CheckMaxLives()
         {
             if (currentLives >= maxLives)
             {
-                _timerText.text = "FULL";
+                _timerText.text = LocalDataSystem.localData.userInfo.infiniteLives ? "INFINITE" : "FULL";
                 if (timerCoroutine != null)
+                {
                     StopCoroutine(timerCoroutine);
+                    timerCoroutine = null;
+                }
                 return;
             }
         }
@@ -123,7 +144,7 @@ namespace User
             PulseAnimationAsync(_targetTimerRect).Forget();
             if (timeLeft.TotalSeconds <= 0)
             {
-                AddLife();
+                CheckLivesRecovery();
             }
             else
             {
@@ -135,82 +156,60 @@ namespace User
         
         private void LoadData()
         {
-            currentLives = HealthSystem.currentHealth;
-        
             string savedTime = HealthSystem.nextLifeTime;
             if (!string.IsNullOrEmpty(savedTime))
             {
-                SetNextTime(DateTime.Parse(savedTime));
+                var time = DateTime.Parse(savedTime);
+                if (time <= DateTime.MinValue)
+                {
+                    SetNextTime(DateTime.Now);
+                }
+                else
+                {
+                    SetNextTime(time);
+                }
             }
             else
             {
                 SetNextTime(DateTime.Now);
             }
-
-            UpdateLives();
-        }
-
-        private void UpdateLives()
-        {
             CheckLivesRecovery();
-            CheckMaxLives();
+            UpdateLivesVisual(HealthSystem.currentHealth);
             HealthSystem.SaveLives(currentLives, nextLifeTime.ToString());
         }
 
         private void CheckLivesRecovery()
         {
             TimeSpan timePassed = DateTime.Now - nextLifeTime;
-        
+ 
             if (timePassed.TotalSeconds > 0 && currentLives < maxLives)
             {
                 int livesToAdd = Mathf.Min(
-                    Mathf.FloorToInt((float)timePassed.TotalSeconds / recoveryTimeInSeconds),
+                    Mathf.FloorToInt((float)timePassed.TotalSeconds / recoveryTimeInSeconds) + 1,
                     maxLives - currentLives
                 );
-
-                if (livesToAdd <= 0)
-                    return;
                 
-                currentLives += livesToAdd;
-                if (currentLives < maxLives)
+                if (livesToAdd > 0)
                 {
-                    SetNextTime(nextLifeTime.AddSeconds(livesToAdd * recoveryTimeInSeconds));
-                    RunTimer();
+                    HealthSystem.SaveIfChanged(currentLives + livesToAdd);
+                    UpdateLivesVisual(currentLives);
                 }
             }
-        }
-
-        private void AddLife()
-        {
-            if (currentLives < maxLives)
-            {
-                SetNextTime(DateTime.Now.AddSeconds(recoveryTimeInSeconds));
-                IncreaseLives();
-            }
-        }
-
-        private void IncreaseLives()
-        {
-            HealthSystem.Increase();
-            SaveTime();
         }
         
         private void SaveTime()
         {
-            HealthSystem.StartRestore(nextLifeTime.ToString());
-        }
-
-        void OnApplicationQuit()
-        {
-           // SaveTime();
+            HealthSystem.SaveNextLiftTime(nextLifeTime.ToString());
         }
 
         void OnApplicationPause(bool pauseStatus)
         {
-            if (!pauseStatus)
+            if (!pauseStatus && _isInitialized)
             {
-                UpdateLives();
-                // SaveTime();
+                LoadData();
+                CheckLivesRecovery();
+                UpdateLivesVisual(currentLives);
+                HealthSystem.SaveLives(currentLives, nextLifeTime.ToString());
             }
         }
     }

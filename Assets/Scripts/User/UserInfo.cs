@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine.Serialization;
 
 namespace DefaultNamespace.User
 {
@@ -10,5 +11,6 @@ namespace DefaultNamespace.User
         public int health = 5;
         public int maxHealth = 5;
         public string nextLifeTime;
+        [FormerlySerializedAs("infiniteLifes")] public bool infiniteLives;
     }
 }
