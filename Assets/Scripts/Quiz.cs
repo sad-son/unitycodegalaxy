@@ -9,6 +9,7 @@ using Random = UnityEngine.Random;
 
 public class Quiz : MonoBehaviour
 {
+    public static Quiz instance;
     public QuizItem quizItem;
     public TMP_Text titleText;
     public RectTransform questionsPanel;
@@ -16,14 +17,31 @@ public class Quiz : MonoBehaviour
     public Action onCompleted;
 
     public List<QuizItem> quizItems = new List<QuizItem>();
-    
+    private List<GameObject> _childs = new List<GameObject>();
+    private void Awake()
+    {
+        instance = this;
+        _childs = transform.GetComponentsInChildren<Transform>(true).Select(x => x.gameObject).ToList();
+        SetActive(false);
+    }
+
     private void OnDestroy()
     {
         onCompleted = null;
     }
 
+    public void SetActive(bool active)
+    {
+        _childs.ForEach(x =>
+        {
+            if (x != gameObject)
+                x.SetActive(active);
+        });
+    }
+    
     public void Setup(Question question)
     {
+        SetActive(true);
         CloseButton.instance.gameObject.SetActive(false);
         titleText.text = question.title;
         Shuffle(question.answers);

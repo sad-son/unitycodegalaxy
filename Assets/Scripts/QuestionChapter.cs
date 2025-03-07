@@ -26,6 +26,7 @@ namespace DefaultNamespace
             _button.onClick.AddListener(OnClick);
             HealthSystem.OnHealthChanged += OnHealthChanged;
         }
+
         private void OnDestroy()
         {
             if (_quiz)
@@ -63,9 +64,7 @@ namespace DefaultNamespace
             }
             
             SetActiveQuestionChapters(false);
-            if (_quiz == null)
-                _quiz = Instantiate(LevelLoader.instance.quizPrefab, LevelLoader.instance.safeArea);
-            
+            _quiz = Quiz.instance;
             _quiz.gameObject.SetActive(true);
             _quiz.Setup(_currentQuestion);
             _quiz.onCompleted += OnCompleted;
