@@ -115,7 +115,7 @@ namespace DefaultNamespace
         {
             UpdateVisual();
             if (_quiz)
-                _quiz.gameObject.SetActive(false);
+                _quiz.SetActive(false);
             SetActiveQuestionChapters(true);
             LevelLoader.instance.questionChapters.ForEach(questionChapter => questionChapter.UpdateVisual());
             PopupHolder.currentPopupType = PopupType.QuestionChapter;
