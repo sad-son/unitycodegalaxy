@@ -15,9 +15,10 @@ namespace DefaultNamespace
         public Sprite greenImage;
         public Sprite redImage;
         public Sprite defaultImage;
+        private Action _onRightAnswer;
         private Action _onComplete;
         private Button _button;
-        
+        private string _question;
         
         private void Awake()
         {
@@ -33,8 +34,9 @@ namespace DefaultNamespace
             _onComplete = null;
         }
 
-        public void Setup(Answer answer, Action onComplete)
+        public void Setup(string question, Answer answer, Action onComplete)
         {
+            _question = question;
             answerText.text = answer.answer;
             rightAnswer = answer.right;
             _onComplete = onComplete;
@@ -43,11 +45,12 @@ namespace DefaultNamespace
 
         public async void CheckAnswer()
         {
-            
             if (rightAnswer)
             {
                 image.sprite = greenImage;
                 SoundManager.Instance.PlayCorrectAnswer();
+                LocalDataSystem.SaveQuestion(_question);
+                _onRightAnswer?.Invoke();
                 await UniTask.Delay(TimeSpan.FromSeconds(answerCheckedDelay), cancellationToken: this.GetCancellationTokenOnDestroy());
                 _onComplete?.Invoke();
                 return;

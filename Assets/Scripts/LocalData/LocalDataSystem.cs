@@ -36,6 +36,7 @@ namespace DefaultNamespace
 
         public static void SaveQuestion(string question)
         {
+            Debug.LogError($"SaveQuestion {question}");
             var hash = question.GetHashCode();
             if (!_localData.quizData.completedQuestionHashes.Contains(hash))
             {

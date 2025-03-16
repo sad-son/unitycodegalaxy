@@ -14,10 +14,12 @@ public class Quiz : MonoBehaviour
     public TMP_Text titleText;
     public RectTransform questionsPanel;
 
-    public Action onCompleted;
+    public Action<string> onCompleted;
 
     public List<QuizItem> quizItems = new List<QuizItem>();
     private List<GameObject> _childs = new List<GameObject>();
+    private Question _currentQuestion;
+    
     private void Awake()
     {
         instance = this;
@@ -41,8 +43,9 @@ public class Quiz : MonoBehaviour
     
     public void Setup(Question question)
     {
+        _currentQuestion = question;
         SetActive(true);
-        CloseButton.instance.gameObject.SetActive(false);
+            //CloseButton.instance.gameObject.SetActive(false);
         titleText.text = question.title;
         Shuffle(question.answers);
         var quizCreated = !quizItems.Any();
@@ -55,11 +58,11 @@ public class Quiz : MonoBehaviour
             {
                 var instance = Instantiate(quizItem, questionsPanel);
                 quizItems.Add(instance);
-                instance.Setup(answer, Complete);
+                instance.Setup(_currentQuestion.title, answer, Complete);
                 continue;
             }
            
-            quizItems[i].Setup(answer, Complete);
+            quizItems[i].Setup(_currentQuestion.title, answer, Complete);
         }
         
         PopupHolder.currentPopupType = PopupType.Quiz;
@@ -77,6 +80,6 @@ public class Quiz : MonoBehaviour
     
     public void Complete()
     {
-        onCompleted?.Invoke();
+        onCompleted?.Invoke(_currentQuestion.title);
     }
 }

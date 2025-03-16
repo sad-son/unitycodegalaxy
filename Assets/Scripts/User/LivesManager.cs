@@ -5,6 +5,7 @@ using DefaultNamespace;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace User
 {
@@ -13,6 +14,7 @@ namespace User
         [SerializeField] private int maxLives = 5;
         [SerializeField] private float recoveryTimeInSeconds = 5;
         [SerializeField] private TextMeshProUGUI _healthText;
+        [SerializeField] private Slider _slider;
 
         [SerializeField] private float duration = 1f; 
         [SerializeField] private Vector2 targetScale = new Vector2(1.5f, 1.5f);
@@ -75,6 +77,7 @@ namespace User
         {
             HealthSystem.SaveIfChanged(value);
             _healthText.text = value.ToString();
+            _slider.value = (float)value / maxLives;
             
             PulseAnimationAsync(_targetLivesRect).Forget();
             CheckLivesRecovery();

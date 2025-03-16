@@ -32,8 +32,6 @@ namespace DefaultNamespace
 
         private void OnClick()
         {
-            onClick?.Invoke();
-  
             if (PopupHolder.currentPopupType == PopupType.QuestionChapter)
             {
                 CloseQuestionChapter();
@@ -48,6 +46,8 @@ namespace DefaultNamespace
                 _levelLoader.subjectChapters.Clear();
                 return;
             }
+            
+            onClick?.Invoke();
         }
 
         public void CloseQuestionChapter()

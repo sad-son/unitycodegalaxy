@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,8 +24,9 @@ namespace DefaultNamespace
         private void Awake()
         {
             _button = GetComponent<Button>();
-            _button.onClick.AddListener(OnClick);
+            _button.onClick.AddListener(Select);
             HealthSystem.OnHealthChanged += OnHealthChanged;
+            CloseButton.instance.onClick += OnCloseClicked;
         }
 
         private void OnDestroy()
@@ -32,9 +34,21 @@ namespace DefaultNamespace
             if (_quiz)
                 _quiz.onCompleted -= OnCompleted;
             HealthSystem.OnHealthChanged -= OnHealthChanged;
+            CloseButton.instance.onClick -= OnCloseClicked;
             _button.onClick.RemoveAllListeners();
             onCompleted = null;
         }
+
+        private void OnEnable()
+        {
+            UpdateVisual();
+        }
+
+        private void OnCloseClicked()
+        {
+            CloseQuiz();
+        }
+
         
         public void Setup(Question question, SubjectChapter subjectChapter, Action completed)
         {
@@ -49,13 +63,14 @@ namespace DefaultNamespace
 
         public void UpdateVisual()
         {
+            Debug.LogError($"SAD {_currentQuestion.title} IsQuestionCompleted {LocalDataSystem.IsQuestionCompleted(_currentQuestion.title)}");
             if (LocalDataSystem.IsQuestionCompleted(_currentQuestion.title))
             {
                 _image.sprite = _completedQuestionSprite;
             }
         }
 
-        public void OnClick()
+        public void Select()
         {
             if (HealthSystem.currentHealth <= 0)
             {
@@ -77,9 +92,13 @@ namespace DefaultNamespace
         }
         
 
-        private void OnCompleted()
+        private void OnCompleted(string title)
         {
-            LocalDataSystem.SaveQuestion(_currentQuestion.title);
+            if (title != _currentQuestion.title)
+                return;
+            
+            Debug.Log($"save {_currentQuestion.title}");
+
             onCompleted?.Invoke();
             for (int i = 0; i < _subjectChapter._questions.Count; i++)
             {
@@ -100,8 +119,14 @@ namespace DefaultNamespace
 
         private void NextQuestion(int i)
         {
-            _currentQuestion = _subjectChapter._questions[i + 1];
-            _quiz.Setup(_currentQuestion);
+            var nextQuestion = _subjectChapter._questions[i + 1];
+            
+            _quiz.onCompleted -= OnCompleted;
+
+            var nextChapter =
+                LevelLoader.instance.questionChapters.FirstOrDefault(chapter =>
+                    chapter._currentQuestion.title == nextQuestion.title);
+            nextChapter.Select();
         }
 
         private void CompleteChapter()
@@ -113,13 +138,15 @@ namespace DefaultNamespace
 
         private void CloseQuiz()
         {
-            UpdateVisual();
+            if (PopupHolder.currentPopupType != PopupType.Quiz)
+                return;
+            
             if (_quiz)
                 _quiz.SetActive(false);
             SetActiveQuestionChapters(true);
+            UpdateVisual();
             LevelLoader.instance.questionChapters.ForEach(questionChapter => questionChapter.UpdateVisual());
             PopupHolder.currentPopupType = PopupType.QuestionChapter;
-            CloseButton.instance.gameObject.SetActive(true);
         }
 
         private void SetActiveQuestionChapters(bool state)
